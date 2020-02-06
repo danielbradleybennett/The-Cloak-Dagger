@@ -9,7 +9,7 @@ import "./Tavern.css"
 export default () => (
     <>
         <Route render={() => {
-            if (localStorage.getItem("tavern_customer")) {
+            if (localStorage.getItem("currentUserId")) {
                 return (
                     <>
                         <Route render={props => <NavBar {...props} />} />

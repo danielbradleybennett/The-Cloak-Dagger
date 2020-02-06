@@ -10,7 +10,7 @@ const Login = props => {
     const address = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -26,12 +26,12 @@ const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
-                    localStorage.setItem("tavern_customer", exists.id)
+                    localStorage.setItem("currentUserId", exists.id)
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
                 } else if (!exists) {
-                    fetch("http://localhost:8088/customers", {
+                    fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const Login = props => {
                     })
                         .then(_ => _.json())
                         .then(response => {
-                            localStorage.setItem("tavern_customer", response.id)
+                            localStorage.setItem("currentUserId", response.id)
                             props.history.push("/")
                         })
                 }

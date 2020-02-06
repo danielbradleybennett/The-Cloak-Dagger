@@ -4,29 +4,29 @@ import React, { useState, useEffect } from "react"
     The context is imported and used by individual components
     that need data
 */
-export const UsersContext = React.createContext()
+export const SpellTypeContext = React.createContext()
 
 /*
  This component establishes what data can be used.
  */
-export const UsersProvider = (props) => {
-    const [users, setUsers] = useState([])
+export const SpellTypeProvider = (props) => {
+    const [spellType, setSpellType] = useState([])
 
-    const getUsers = () => {
-        return fetch("http://localhost:8088/Users")
+    const getSpellType = () => {
+        return fetch("http://localhost:8088/spellType")
             .then(res => res.json())
-            .then(setUsers)
+            .then(setSpellType)
     }
 
-    const addUsers = users => {
-      return fetch("http://localhost:8088/users", {
+    const addSpellType = SpellType => {
+      return fetch("http://localhost:8088/spellType", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
-          body: JSON.stringify(users)
+          body: JSON.stringify(spellType)
       })
-          .then(getUsers)
+          .then(getSpellType)
   }
 
   
@@ -39,7 +39,7 @@ export const UsersProvider = (props) => {
         an empty array is the second argument to avoid infinite loop.
     */
     useEffect(() => {
-        getUsers()
+        getSpellType()
     }, [])
 
     // useEffect(() => {
@@ -48,10 +48,10 @@ export const UsersProvider = (props) => {
     // }, [Users])
 
     return (
-        <UsersContext.Provider value={{
-            users, addUsers
+        <SpellTypeContext.Provider value={{
+            spellType, addSpellType
         }}>
             {props.children}
-        </UsersContext.Provider>
+        </SpellTypeContext.Provider>
     )
 }

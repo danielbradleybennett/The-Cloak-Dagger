@@ -4,29 +4,29 @@ import React, { useState, useEffect } from "react"
     The context is imported and used by individual components
     that need data
 */
-export const UsersContext = React.createContext()
+export const SpellCasterContext = React.createContext()
 
 /*
  This component establishes what data can be used.
  */
-export const UsersProvider = (props) => {
-    const [users, setUsers] = useState([])
+export const SpellCasterProvider = (props) => {
+    const [spellCaster, setSpellCaster] = useState([])
 
-    const getUsers = () => {
-        return fetch("http://localhost:8088/Users")
+    const getSpellCaster = () => {
+        return fetch("http://localhost:8088/spellCaster")
             .then(res => res.json())
-            .then(setUsers)
+            .then(setSpellCaster)
     }
 
-    const addUsers = users => {
-      return fetch("http://localhost:8088/users", {
+    const addSpellCaster = spellCaster => {
+      return fetch("http://localhost:8088/spellCaster", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
           },
-          body: JSON.stringify(users)
+          body: JSON.stringify(spellCaster)
       })
-          .then(getUsers)
+          .then(getSpellCaster)
   }
 
   
@@ -39,7 +39,7 @@ export const UsersProvider = (props) => {
         an empty array is the second argument to avoid infinite loop.
     */
     useEffect(() => {
-        getUsers()
+        getSpellCaster()
     }, [])
 
     // useEffect(() => {
@@ -48,10 +48,10 @@ export const UsersProvider = (props) => {
     // }, [Users])
 
     return (
-        <UsersContext.Provider value={{
-            users, addUsers
+        <SpellCasterContext.Provider value={{
+            spellCaster, addSpellCaster
         }}>
             {props.children}
-        </UsersContext.Provider>
+        </SpellCasterContext.Provider>
     )
 }
