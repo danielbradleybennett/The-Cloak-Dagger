@@ -15,8 +15,24 @@ export default (props) => {
                 <Link className="navbar__link" to="/brewery">The Brewery</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link" to="/tales">The Teller of Tales</Link>
+                <Link className="navbar__link" to="/vyasa">Vyasa</Link>
             </li>
-        </ul>
-    )
+{
+    localStorage.getItem("currentUserId")
+        ? <li className="navbar__item">
+            <Link className="navbar__link"
+                to=""
+                onClick={e => {
+                    e.preventDefault()
+                    localStorage.removeItem("currentUserId")
+                    props.history.push("/")
+                }}
+            >Logout</Link>
+        </li>
+        : ""
+// what is this      ⬆
+}
+</ul>
+)
+    
 }

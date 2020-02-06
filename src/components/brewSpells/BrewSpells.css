@@ -1,0 +1,12 @@
+.brewSpells {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.brewSpells {
+    flex-basis: 22%;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid goldenrod;
+}
