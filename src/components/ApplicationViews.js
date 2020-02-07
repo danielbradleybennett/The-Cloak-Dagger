@@ -8,7 +8,11 @@ import BrewSpellsDetails from "./brewSpells/BrewSpellsDetails"
 import BrewMonstersDetails from "./brewMonsters/BrewMonstersDetails"
 import BrewSpellsForm from "./brewSpells/BrewSpellsForm"
 import BrewMonstersForm from "./brewMonsters/BrewMonstersForm"
-
+import { NotesProvider } from "./notes/NotesDataProvider"
+import { TheWorldProvider } from "./world/TheWorldDataProvider"
+import NotesDetails from "./notes/NotesDetails"
+import NotesList from "./notes/NotesList"
+import NotesForm from "./notes/NotesForm"
 
 
 
@@ -17,17 +21,40 @@ export default (props) => {
         <>
 
 
+
+
             <BrewMonstersProvider>
                 <BrewSpellsProvider>
-                    <Route path="/brewery">
-                        <div>
-                            <button onClick={() => props.history.push("/brewery/spellList")}>
-                                Spells
-                        </button>
-                        </div>
-                    </Route>
+                    <TheWorldProvider>
+                        <NotesProvider>
 
-                    {/* <Route path="/spellList">
+                            <Route path="/vyasa">
+                                <div>
+                                    <button onClick={() => props.history.push("/vyasa/notesList")}>
+                                        Notes
+                                </button>
+                                </div>
+                            </Route>
+
+                            <Route path="/vyasa">
+                                <div>
+                                    <button onClick={() => props.history.push("/vyasa/theWorldList")}>
+                                        The World
+                                </button>
+                                </div>
+                            </Route>
+
+
+
+                            <Route path="/brewery">
+                                <div>
+                                    <button onClick={() => props.history.push("/brewery/spellList")}>
+                                        Spells
+                                </button>
+                                </div>
+                            </Route>
+
+                            {/* <Route path="/spellList">
                         <div>
                             <button onClick={() => props.history.push("/brewery/spellList")}>
                                 Spells
@@ -35,7 +62,7 @@ export default (props) => {
                         </div>
                     </Route> */}
 
-                    {/* <Route path="/monsterList">
+                            {/* <Route path="/monsterList">
                         <div>
                             <button onClick={() => props.history.push("/spellList")}>
                                 Spells
@@ -43,7 +70,7 @@ export default (props) => {
                         </div>
                     </Route> */}
 
-                    {/* <Route path="/monsterList">
+                            {/* <Route path="/monsterList">
                         <div>
                             <button onClick={() => props.history.push("/brewery/monsterList")}>
                                 Monsters
@@ -51,68 +78,86 @@ export default (props) => {
                         </div>
                     </Route> */}
 
-                    <Route path="/brewery">
-                        <div>
-                            <button onClick={() => props.history.push("/brewery/monsterList")}>
-                                Monsters
-                        </button>
-                        </div>
-                    </Route>
+                            <Route path="/brewery">
+                                <div>
+                                    <button onClick={() => props.history.push("/brewery/monsterList")}>
+                                        Monsters
+                                </button>
+                                </div>
+                            </Route>
 
 
 
-                    <Route path="/spellList">
-                        <div>
-                            <button onClick={() => props.history.push("/monsterList")}>
-                                Monsters
-                        </button>
-                        </div>
-                    </Route>
+                            <Route path="/spellList">
+                                <div>
+                                    <button onClick={() => props.history.push("/monsterList")}>
+                                        Monsters
+                                </button>
+                                </div>
+                            </Route>
 
 
 
 
-                    <Route exact path="/brewery/spellList/:brewSpellsId(\d+)" render={
-                        props => <BrewSpellsDetails {...props} />
-                    } />
-
-                    <Route exact path="/brewery/monsterList/:brewMonstersId(\d+)" render={
-                        props => <BrewMonstersDetails {...props} />
-                    } />
-
-                    <Route exact path="/brewery/spellList/create" render={
-                        props => <BrewSpellsForm {...props} />
-                    } />
-
-                    <Route exact path="/brewery/spellList/create" render={
-                        props => <BrewSpellsList {...props} />
-                    } />
-
-                    <Route path="/brewery/spellList/edit/:brewSpellsId(\d+)" render={
-                        props => <BrewSpellsForm {...props} />
-                    } />
+                            <Route exact path="/brewery/spellList/:brewSpellsId(\d+)" render={
+                                props => <BrewSpellsDetails {...props} />
+                            } />
 
 
-                    <Route exact path="/brewery/spellList/" render={
-                        props => <BrewSpellsList {...props} />
-                    } />
+                            <Route exact path="/brewery/spellList/create" render={
+                                props => <BrewSpellsForm {...props} />
+                            } />
 
-                    <Route exact path="/brewery/monsterList/" render={
-                        props => <BrewMonstersList {...props} />
-                    } />
+                            <Route exact path="/brewery/spellList/create" render={
+                                props => <BrewSpellsList {...props} />
+                            } />
 
-                    <Route exact path="/brewery/monsterList/create" render={
-                        props => <BrewMonstersForm {...props} />
-                    } />
-
-                    <Route path="/brewery/monsterList/edit/:brewMonstersId(\d+)" render={
-                        props => <BrewMonstersForm {...props} />
-                    } />
+                            <Route path="/brewery/spellList/edit/:brewSpellsId(\d+)" render={
+                                props => <BrewSpellsForm {...props} />
+                            } />
 
 
+                            <Route exact path="/brewery/spellList/" render={
+                                props => <BrewSpellsList {...props} />
+                            } />
+
+                            <Route exact path="/brewery/monsterList/:brewMonstersId(\d+)" render={
+                                props => <BrewMonstersDetails {...props} />
+                            } />
+
+                            <Route exact path="/brewery/monsterList/" render={
+                                props => <BrewMonstersList {...props} />
+                            } />
+
+                            <Route exact path="/brewery/monsterList/create" render={
+                                props => <BrewMonstersForm {...props} />
+                            } />
+
+                            <Route exact path="/brewery/monsterList/edit/:brewMonstersId(\d+)" render={
+                                props => <BrewMonstersForm {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/notesList/edit/:notesId(\d+)" render={
+                                props => <NotesForm {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/notesList/create" render={
+                                props => <NotesForm {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/notesList/" render={
+                                props => <NotesList {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/notesList/:notesId(\d+)" render={
+                                props => <NotesDetails {...props} />
+                            } />
+
+
+
+                        </NotesProvider>
+                    </TheWorldProvider>
                 </BrewSpellsProvider>
-
-
             </BrewMonstersProvider>
 
 

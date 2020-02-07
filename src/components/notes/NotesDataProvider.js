@@ -18,8 +18,8 @@ export const NotesProvider = (props) => {
             .then(setNotes)
     }
 
-    const deleteNotes = NotesId => {
-      return fetch(`http://localhost:8088/notes/${notesId}`, {
+    const deleteNotes = notes => {
+      return fetch(`http://localhost:8088/notes/${notes.id}`, {
           method: "DELETE"
       })
           .then(getNotes)
