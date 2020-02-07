@@ -7,6 +7,7 @@ import BrewMonstersList from "./brewMonsters/BrewMonstersList"
 import BrewSpellsDetails from "./brewSpells/BrewSpellsDetails"
 import BrewMonstersDetails from "./brewMonsters/BrewMonstersDetails"
 import BrewSpellsForm from "./brewSpells/BrewSpellsForm"
+import BrewMonstersForm from "./brewMonsters/BrewMonstersForm"
 
 
 
@@ -26,29 +27,29 @@ export default (props) => {
                         </div>
                     </Route>
 
-                    <Route path="/spellList">
+                    {/* <Route path="/spellList">
                         <div>
                             <button onClick={() => props.history.push("/brewery/spellList")}>
                                 Spells
                         </button>
                         </div>
-                    </Route>
+                    </Route> */}
 
-                    <Route path="/monsterList">
+                    {/* <Route path="/monsterList">
                         <div>
                             <button onClick={() => props.history.push("/spellList")}>
                                 Spells
                         </button>
                         </div>
-                    </Route>
+                    </Route> */}
 
-                    <Route path="/monsterList">
+                    {/* <Route path="/monsterList">
                         <div>
                             <button onClick={() => props.history.push("/brewery/monsterList")}>
                                 Monsters
                         </button>
                         </div>
-                    </Route>
+                    </Route> */}
 
                     <Route path="/brewery">
                         <div>
@@ -96,10 +97,17 @@ export default (props) => {
                         props => <BrewSpellsList {...props} />
                     } />
 
-                    <Route path="/brewery/monsterList/" render={
-                        props => <BrewMonstersList {...props}/>
-                    }/>
+                    <Route exact path="/brewery/monsterList/" render={
+                        props => <BrewMonstersList {...props} />
+                    } />
 
+                    <Route exact path="/brewery/monsterList/create" render={
+                        props => <BrewMonstersForm {...props} />
+                    } />
+
+                    <Route path="/brewery/monsterList/edit/:brewMonstersId(\d+)" render={
+                        props => <BrewMonstersForm {...props} />
+                    } />
 
 
                 </BrewSpellsProvider>

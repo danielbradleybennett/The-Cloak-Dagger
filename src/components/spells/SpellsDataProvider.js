@@ -9,7 +9,7 @@ export const SpellsContext = React.createContext()
 /*
  This component establishes what data can be used.
  */
-export const SpellsProvider = (props) => {
+export const SpellsProvider = (props) => {debugger
     const [spells, setSpells] = useState([])
 
     const getSpells = () => {

@@ -4,7 +4,7 @@ import { BrewMonstersContext } from "./BrewMonstersDataProvider"
 
 export default (props) => {
   const { brewMonsters, deleteBrewMonsters } = useContext(BrewMonstersContext)
-  console.log(brewMonsters)
+  
 
 
   const chosenMonsterId = parseInt(props.match.params.brewMonstersId, 10)
@@ -16,6 +16,8 @@ export default (props) => {
     <section className="monster">
       <h3 className="monster__name">{monster.name}</h3>
       <div className="monster__description">{monster.desc}</div>
+      <div className="monster__armor">{monster.armor}</div>
+      
       <button onClick={() => {
         props.history.push(`/brewery/monsterList/edit/${monster.id}`)
       }
