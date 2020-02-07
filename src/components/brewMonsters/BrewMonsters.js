@@ -3,8 +3,6 @@ import "./BrewMonsters.css"
 import { Link } from "react-router-dom"
 
 
-
-
 export default ({ brewMonster }) => (
     <section className="brewMonsters">
         <h3 className="brew__monster">

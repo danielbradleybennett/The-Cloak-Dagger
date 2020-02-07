@@ -4,12 +4,16 @@ import BrewMonsters from "./BrewMonsters"
 
 import "./BrewMonsters.css"
 
-export default () => {
+export default (props) => {
 
     const { brewMonsters } = useContext(BrewMonstersContext)
 
     return (
       <>
+        <button onClick={
+        () => props.history.push("/brewery/monsterList/create")}>
+        New Monster
+        </button>
        
         <div className="brewMonsters">
         {
