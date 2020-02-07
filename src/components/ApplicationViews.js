@@ -13,6 +13,9 @@ import { TheWorldProvider } from "./world/TheWorldDataProvider"
 import NotesDetails from "./notes/NotesDetails"
 import NotesList from "./notes/NotesList"
 import NotesForm from "./notes/NotesForm"
+import TheWorldDetails from "./world/TheWorldDetails"
+import TheWorldList from "./world/TheWorldList"
+import TheWorldForm from "./world/TheWorldForm"
 
 
 
@@ -38,7 +41,7 @@ export default (props) => {
 
                             <Route path="/vyasa">
                                 <div>
-                                    <button onClick={() => props.history.push("/vyasa/theWorldList")}>
+                                    <button onClick={() => props.history.push("/vyasa/worldList")}>
                                         The World
                                 </button>
                                 </div>
@@ -153,6 +156,21 @@ export default (props) => {
                                 props => <NotesDetails {...props} />
                             } />
 
+                            <Route exact path="/vyasa/worldList/edit/:theWorldId(\d+)" render={
+                                props => <TheWorldForm {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/worldList/create" render={
+                                props => <TheWorldForm {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/worldList/" render={
+                                props => <TheWorldList {...props} />
+                            } />
+
+                            <Route exact path="/vyasa/worldList/:theWorldId(\d+)" render={
+                                props => <TheWorldDetails {...props} />
+                            } />
 
 
                         </NotesProvider>

@@ -18,7 +18,7 @@ console.log(notes)
         New Note
         </button>
 
-        <div className="notesList">
+        <div className="notes">
           {
             notes.map(note => {
               
