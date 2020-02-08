@@ -7,7 +7,9 @@ import "./TheWorld.css"
 export default (props) => {
   
   const { theWorld } = useContext(TheWorldContext)
-console.log(theWorld)
+  
+  const currentUserId = parseInt(localStorage.getItem("currentUserId"), 10)
+  const currentUserWorld = theWorld.filter(w => w.userId === currentUserId)
   
     
     return (
@@ -20,7 +22,7 @@ console.log(theWorld)
 
         <div className="worldList">
           {
-            theWorld.map(world => {
+            currentUserWorld.map(world => {
               
               return <TheWorld key={world.id} world={world} />
             })

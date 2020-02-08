@@ -18,8 +18,8 @@ export const TheWorldProvider = (props) => {
             .then(setTheWorld)
     }
 
-    const deleteTheWorld = theWorldId => {
-      return fetch(`http://localhost:8088/TheWorld/${theWorld.id}`, {
+    const deleteTheWorld = theWorld => {
+      return fetch(`http://localhost:8088/theWorld/${theWorld.id}`, {
           method: "DELETE"
       })
           .then(getTheWorld)
@@ -27,7 +27,7 @@ export const TheWorldProvider = (props) => {
 
 
   const editTheWorld = theWorld => {
-    return fetch(`http://localhost:8088/TheWorld/${theWorld.id}`, {
+    return fetch(`http://localhost:8088/theWorld/${theWorld.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
