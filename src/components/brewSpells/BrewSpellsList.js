@@ -6,7 +6,10 @@ import "./BrewSpells.css"
 
 export default (props) => {
   
+  
   const { brewSpells } = useContext(BrewSpellsContext)
+  const currentUserId = parseInt(localStorage.getItem("currentUserId"), 10)
+  const currentUserSpells = brewSpells.filter(spell => spell.userId === currentUserId)
 
   
     
@@ -20,7 +23,7 @@ export default (props) => {
 
         <div className="brewSpells">
           {
-            brewSpells.map(brewSpell => {
+            currentUserSpells.map(brewSpell => {
               
               return <BrewSpells key={brewSpell.id} brewSpell={brewSpell} />
             })

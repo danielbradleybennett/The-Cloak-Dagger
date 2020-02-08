@@ -18,7 +18,7 @@ export const SpellTypeProvider = (props) => {
             .then(setSpellType)
     }
 
-    const addSpellType = SpellType => {
+    const addSpellType = spellType => {
       return fetch("http://localhost:8088/spellType", {
           method: "POST",
           headers: {

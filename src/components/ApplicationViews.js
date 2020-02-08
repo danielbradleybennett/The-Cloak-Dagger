@@ -16,6 +16,9 @@ import NotesForm from "./notes/NotesForm"
 import TheWorldDetails from "./world/TheWorldDetails"
 import TheWorldList from "./world/TheWorldList"
 import TheWorldForm from "./world/TheWorldForm"
+import { SpellTypeProvider } from "./brewSpells/SpellTypeProvider"
+import { SpellSpellCasterProvider } from "./brewSpells/SpellSpellCasterProvider"
+import {SpellCasterProvider} from "./brewSpells/SpellCasterProvider"
 
 
 
@@ -24,12 +27,13 @@ export default (props) => {
         <>
 
 
-
-
+        <SpellCasterProvider>
+          <SpellSpellCasterProvider>
             <BrewMonstersProvider>
                 <BrewSpellsProvider>
                     <TheWorldProvider>
                         <NotesProvider>
+                         <SpellTypeProvider>
 
                             <Route path="/vyasa">
                                 <div>
@@ -172,11 +176,14 @@ export default (props) => {
                                 props => <TheWorldDetails {...props} />
                             } />
 
-
+                          </SpellTypeProvider>
                         </NotesProvider>
                     </TheWorldProvider>
                 </BrewSpellsProvider>
             </BrewMonstersProvider>
+         </SpellSpellCasterProvider>
+        </SpellCasterProvider>
+        
 
 
 
