@@ -1,10 +1,10 @@
-.brewItems {
+.brewWeapons {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.brewItems {
+.brewWeapons {
     flex-basis: 22%;
     margin: 1em;
     padding: 1em;
