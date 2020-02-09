@@ -2,13 +2,21 @@ import React, { useState, useContext, useEffect } from "react";
 import { MonstersContext } from "../monsters/MonstersDataProvider";
 
 
+
 export default (props) => {
 
   const {monsters} = useContext(MonstersContext)
   const [monster, setMonsters] = useState({})
   const [searchValue, setSearchValue] = useState("");
   
-  
+
+
+  const searchOpenMonsters = (searchValue) => {
+    return fetch(`https://api.open5e.com/search/?limit=999999&route=monsters&text=${searchValue}`)
+        .then(res => res.json())
+        .then(console.log)
+        
+}
 
 
 
@@ -24,20 +32,24 @@ export default (props) => {
     setSearchValue("")
   }
 
-  const callSearchFunction = (e) => {debugger
+  const callSearchFunction = (e) => {
   
   const searchValue = e.current.value
-debugger
-  const foundMonsters = monsters.filter(monster => {
-    if (monster.name.includes(searchValue))
-      {return monster} 
-  })
+
+  searchOpenMonsters(searchValue)
+
+
+
+//   const foundMonsters = monsters.filter(monster => {
+//     if (monster.name.includes(searchValue))
+//       {return monster} 
+//   })
   
 
-  e.preventDefault();
-  props.search(searchValue);
-  resetInputField();
-console.log(searchValue)
+//   e.preventDefault();
+//   props.search(searchValue);
+//   resetInputField();
+// console.log(searchValue)
 }
     
     
@@ -51,9 +63,14 @@ console.log(searchValue)
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <input onClick={ 
-          // () => {if(evt.target.value === evt.target.name)
-        callSearchFunction} 
+        <input onClick={ (e) => {
+          e.preventDefault()
+          console.log(e)
+          callSearchFunction(e)} 
+
+
+        }
+          
         
        type="submit" value="SEARCH" />
        
