@@ -13,7 +13,7 @@ export const MonstersProvider = (props) => {
     const [monsters, setMonsters] = useState([])
 
     const getMonsters = () => {
-        return fetch("http://localhost:8088/monsters")
+        return fetch("https://api.open5e.com/monsters/?limit=1086")
             .then(res => res.json())
             .then(setMonsters)
     }
