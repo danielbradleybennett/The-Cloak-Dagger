@@ -31,6 +31,9 @@ import BrewArmorDetails from "./armor/BrewArmorDetails"
 import BrewArmorList from "./armor/BrewArmorList"
 import BrewArmorForm from "./armor/BrewArmorForm"
 import { BrewArmorProvider } from "./armor/BrewArmorDataProvider"
+// import MonstersList from "./monsters/MonstersList"
+import {MonstersProvider} from "./monsters/MonstersDataProvider"
+import Search from "./search/Search"
 
 
 
@@ -38,7 +41,7 @@ export default (props) => {
     return (
         <>
 
-
+           <MonstersProvider>
             <SpellCasterProvider>
                 <SpellSpellCasterProvider>
                     <BrewMonstersProvider>
@@ -49,6 +52,12 @@ export default (props) => {
                                         <BrewWeaponsProvider>
                                             <BrewItemsProvider>
                                                 <BrewArmorProvider>
+
+                                                    
+
+
+
+
 
                                                     <Route path="/vyasa">
                                                         <div>
@@ -229,6 +238,10 @@ export default (props) => {
                                                         props => <BrewArmorDetails {...props} />
                                                     } />
 
+                                                    <Route exact path="/library/" render={
+                                                        props => <Search {...props} />
+                                                    } />
+
 
                                                 </BrewArmorProvider>
                                             </BrewItemsProvider>
@@ -240,7 +253,7 @@ export default (props) => {
                     </BrewMonstersProvider>
                 </SpellSpellCasterProvider>
             </SpellCasterProvider>
-
+          </MonstersProvider>
 
 
 
