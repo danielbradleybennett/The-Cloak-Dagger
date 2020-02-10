@@ -32,9 +32,10 @@ import BrewArmorList from "./armor/BrewArmorList"
 import BrewArmorForm from "./armor/BrewArmorForm"
 import { BrewArmorProvider } from "./armor/BrewArmorDataProvider"
 // import MonstersList from "./monsters/MonstersList"
-import { MonstersProvider } from "./monsters/MonstersDataProvider"
+
 import Library from "./library/Library"
 import OpenSpellsDetails from "./library/OpenSpellsDetails"
+import OpenMonstersDetails from "./monsters/OpenMonstersDetails"
 
 
 
@@ -42,7 +43,7 @@ export default (props) => {
     return (
         <>
 
-            <MonstersProvider>
+            
                 <SpellCasterProvider>
                     <SpellSpellCasterProvider>
                         <BrewMonstersProvider>
@@ -244,10 +245,16 @@ export default (props) => {
                                                         } />
 
 
-
+                                                        {/* Open5e Spells */}
                                                         <Route exact path="/library/spells/:spellSlug" render={
                                                             props => <OpenSpellsDetails {...props} />
                                                         } />
+
+                                                        {/* Open5e Monsters */}
+                                                        <Route exact path="/library/monsters/:monsterSlug" render={
+                                                            props => <OpenMonstersDetails {...props} />
+                                                        } />
+
 
 
                                                     </BrewArmorProvider>
@@ -260,7 +267,7 @@ export default (props) => {
                         </BrewMonstersProvider>
                     </SpellSpellCasterProvider>
                 </SpellCasterProvider>
-            </MonstersProvider>
+            
 
 
 

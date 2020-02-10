@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { BrewSpellsContext } from "./BrewSpellsDataProvider"
 import {SpellTypeContext} from "./SpellTypeProvider"
-// import {SpellSpellCaster} from "./SpellSpellCaster"
+import {SpellCasterContext} from "./SpellCasterProvider"
 
 
 
 export default props => {
 
-  // const {spellCaster}
+  const {spellCaster} = useContext(SpellCasterContext)
   const {spellType} = useContext(SpellTypeContext)
   const { addBrewSpells, brewSpells, editBrewSpells } = useContext(BrewSpellsContext)
   const [brewSpell, setBrewSpells] = useState({})
@@ -52,8 +52,9 @@ export default props => {
         description: brewSpell.description,
         castingTime: brewSpell.castingTime,
         typeId: typeId,
+        level: brewSpell.level,
         duration: brewSpell.duration,
-        // spellCasterType: brewSpell.spellCasterType,
+        // casterId: casterId,
         range: brewSpell.range,
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
@@ -64,12 +65,14 @@ export default props => {
         description: brewSpell.description,
         castingTime: brewSpell.castingTime,
         typeId: typeId,
+        level: brewSpell.level,
+        // casterId: casterId,
         duration: brewSpell.duration,
-        // spellCasterType: brewSpell.spellCasterType,
         range: brewSpell.range,
         userId: parseInt(localStorage.getItem("currentUserId")),
 
       })
+    
         .then(() => props.history.push("/brewery/spellList"))
     }
 
@@ -79,14 +82,14 @@ export default props => {
 
     <div className="BrewSpellsContainer">
       <form className="BrewSpellsBrewSpells">
-        <h2 className="BrewSpellsBrewSpells__title">{editMode ? "Update BrewSpells" : "Add BrewSpells"}</h2>
+        <h2 className="BrewSpellsBrewSpells__title">{editMode ? "Update Spell" : "Add Spell"}</h2>
 
         <fieldset>
           <div className="form-group">
             <label htmlFor="name">Spell Name: </label>
             <input type="text" name="name" required autoFocus className="form-control"
               proptype="varchar"
-              placeholder="BrewSpells name"
+              placeholder="Spell Name"
               defaultValue={brewSpell.name}
               onChange={handleControlledInputChange}
             />
@@ -95,28 +98,28 @@ export default props => {
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="spellDesc">Spell Description: </label>
+            <label htmlFor="spellDesc">Description: </label>
             <input type="text" name="description" required className="form-control"
               proptype="varchar"
-              placeholder="BrewSpells spellDesc"
+              placeholder="Spell Description"
               defaultValue={brewSpell.description}
               onChange={handleControlledInputChange}
             />
           </div>
         </fieldset>
 
-
         <fieldset>
           <div className="form-group">
-            <label htmlFor="castingTime">Spell Casting Time: </label>
+            <label htmlFor="castingTime">Casting Time: </label>
             <input type="text" name="castingTime" className="form-control"
               proptype="varchar"
-              placeholder="castingTime"
+              placeholder="Casting Time"
               value={brewSpell.castingTime}
               onChange={handleControlledInputChange}>
             </input>
           </div>
         </fieldset>
+        
         {/* dropdown */}
         <fieldset>
           <div className="form-group">
@@ -144,16 +147,16 @@ export default props => {
 
         {/* <fieldset>
           <div className="form-group">
-            <label htmlFor="typeId">Spell Caster </label>
+            <label htmlFor="casterId">Spell Caster </label>
             <select
               defaultValue=""
-              name="typeId"
+              name="casterId"
               ref={type}
-              id="spellType"
+              id="spellCaster"
               className="form-control">
                 
-              <option value="0">Select a Spell Type</option>
-              {spellType.map(st => (
+              <option value="0">Select a Caster</option>
+              {spellCaster.map(st => (
                 <option key={st.id} value={st.id}>
                   {st.name}
                   
@@ -166,44 +169,27 @@ export default props => {
           </div>
         </fieldset> */}
 
-
-
-
-
-
-
-
-
-        {/* <fieldset>
+        
+        <fieldset>
           <div className="form-group">
-            <label htmlFor="spellType">Spell Type: </label>
-            <input type="spellType" name="spellType" className="form-control"
-              proptype="varchar"
-              placeholder="spellType"
-              value={brewSpell.spellType}
+            <label htmlFor="spellType">Level: </label>
+            <input type="level" name="level" className="form-control"
+              proptype="integer"
+              placeholder="Level"
+              value={brewSpell.level}
               onChange={handleControlledInputChange}>
             </input>
           </div>
-        </fieldset> */}
-        {/* need a dropdown */}
-        {/* <fieldset>
-          <div className="form-group">
-            <label htmlFor="spellCasterType">Spell Caster Type: </label>
-            <input type="text" name="spellCasterType" className="form-control"
-              proptype="varchar"
-              placeholder="spellCasterType"
-              value={brewSpell.spellCasterType}
-              onChange={handleControlledInputChange}>
-            </input>
-          </div>
-        </fieldset> */}
+        </fieldset> 
+        
+       
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="spellRange">Spell Range: </label>
+            <label htmlFor="spellRange">Range: </label>
             <input type="text" name="range" className="form-control"
               proptype="varchar"
-              placeholder="spell range"
+              placeholder="Spell Range"
               value={brewSpell.range}
               onChange={handleControlledInputChange}>
             </input>
@@ -212,10 +198,10 @@ export default props => {
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="spellDuration">Spell Duration: </label>
+            <label htmlFor="spellDuration">Duration: </label>
             <input type="text" name="duration" className="form-control"
               proptype="varchar"
-              placeholder="spell duration"
+              placeholder="Spell Duration"
               value={brewSpell.duration}
               onChange={handleControlledInputChange}>
             </input>

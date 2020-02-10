@@ -10,6 +10,7 @@ export default (props) => {
   const chosenMonsterId = parseInt(props.match.params.brewMonstersId, 10)
 
   const monster = brewMonsters.find(m => m.id === chosenMonsterId) || {}
+  
 
 
   return (
@@ -17,6 +18,7 @@ export default (props) => {
       <h3 className="monster__name">{monster.name}</h3>
       <div className="monster__description">{monster.desc}</div>
       <div className="monster__armor">{monster.armor}</div>
+      <div className="monster__hitpoints">{monster.hitpoints}</div>
       
       <button onClick={() => {
         props.history.push(`/brewery/monsterList/edit/${monster.id}`)

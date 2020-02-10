@@ -88,6 +88,18 @@ export default props => {
           />
         </div>
       </fieldset>
+{/* Need Dropdown */}
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="type">Type: </label>
+          <input type="text" name="type" required className="form-control"
+            proptype="varchar"
+            placeholder="Weapon Type"
+            defaultValue={brewWeapon.type}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      </fieldset>
 
 
       <button type="submit"

@@ -43,7 +43,7 @@ export default props => {
         name: brewMonster.name,
         desc: brewMonster.desc,
         armor: brewMonster.armor,
-        Hitpoints: brewMonster.hitpoints,
+        hitpoints: brewMonster.hitpoints,
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
         .then(() => props.history.push("/brewery/monsterList"))
@@ -95,11 +95,11 @@ export default props => {
 
       <fieldset>
         <div className="form-group">
-          <label htmlFor="castingTime">Monster Hitpoints: </label>
+          <label htmlFor="hitpoints">Monster Hitpoints: </label>
           <input type="text" name="hitpoints" className="form-control"
-            proptype="varchar"
+            proptype="integer"
             placeholder="hitpoints"
-            value={brewMonster.castingTime}
+            defaultValue={brewMonster.hitpoints}
             onChange={handleControlledInputChange}>
           </input>
         </div>
@@ -108,7 +108,7 @@ export default props => {
       <fieldset>
         <div className="form-group">
           <label htmlFor="MonsterType">Armor Class </label>
-          <input type="MonsterType" name="armor" className="form-control"
+          <input type="text" name="armor" className="form-control"
             proptype="varchar"
             placeholder="Armor Class"
             value={brewMonster.armor}
