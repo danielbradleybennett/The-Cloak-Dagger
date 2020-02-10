@@ -1,65 +1,55 @@
 import React, { useState, useContext, useEffect } from "react";
-import { MonstersContext } from "../monsters/MonstersDataProvider";
+
+
 
 
 export default (props) => {
 
-  const {monsters} = useContext(MonstersContext)
-  const [monster, setMonsters] = useState({})
-  const [searchValue, setSearchValue] = useState("");
-  
-  
 
+  const [searchText, setSearchText] = useState("");
+  const [searchType, setSearchType] = useState("monsters")
+
+
+  const handleSearchTypeChange = (event) => {
+    const data = event.target.value
+    console.log(data)
+    setSearchType(data)
+  }
 
 
   const handleSearchInputChanges = (e) => {
-    setSearchValue(e.target.value);
+    setSearchText(e.target.value);
   }
 
-  useEffect(() => {
-    
-  }, [monsters])
+  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    props.handleSubmit(searchText, searchType)
 
-  const resetInputField = () => {
-    setSearchValue("")
   }
 
-  const callSearchFunction = (e) => {debugger
-  
-  const searchValue = e.current.value
-debugger
-  const foundMonsters = monsters.filter(monster => {
-    if (monster.name.includes(searchValue))
-      {return monster} 
-  })
-  
 
-  e.preventDefault();
-  props.search(searchValue);
-  resetInputField();
-console.log(searchValue)
-}
-    
-    
-    
-  
+
 
   return (
-      <form className="search">
-        <input
-          value={searchValue}
+    <div>
+      <select onChange={handleSearchTypeChange} value={searchType}>
+        <option value="monsters">Monsters</option>
+        <option value="spells">Spells</option>
+
+      </select>
+      <form onSubmit={handleSubmit}>
+        <input name="searchText"
+          defaultValue={searchText}
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <input onClick={ 
-          // () => {if(evt.target.value === evt.target.name)
-        callSearchFunction} 
-        
-       type="submit" value="SEARCH" />
-       
-          
-          
+        <button type="submit">Search</button>
       </form>
-    );
+    </div>
+
+
+
+  );
 }
 

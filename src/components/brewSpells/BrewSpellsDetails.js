@@ -23,8 +23,10 @@ export default (props) => {
 
   
   
-  const caster = spellSpellCaster.filter(s => s.casterId === spellCaster.id) || {}
-  {console.log(caster)}
+  const casterIds = spellSpellCaster.filter(s => s.spellId === spell.id) || []
+  
+  const casters = casterIds.map(c => spellCaster.find(sc => sc.id === c.casterId)) || []
+  console.log(casters)
 
 
 
