@@ -67,7 +67,7 @@ export default props => {
       
       <fieldset>
         <div className="form-group">
-          <label htmlFor="name">Item Name: </label>
+          <label htmlFor="name">Name: </label>
           <input type="text" name="name" required autoFocus className="form-control"
             proptype="varchar"
             placeholder="Items Name"
@@ -79,11 +79,23 @@ export default props => {
 
       <fieldset>
         <div className="form-group">
-          <label htmlFor="itemDesc">Item Description: </label>
+          <label htmlFor="itemDesc">Description: </label>
           <input type="text" name="desc" required className="form-control"
             proptype="varchar"
             placeholder="Item Description"
             defaultValue={brewItem.desc}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      </fieldset>
+{/*  */}
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="itemDesc">Type: </label>
+          <input type="text" name="type" required className="form-control"
+            proptype="varchar"
+            placeholder="Item Description"
+            defaultValue={brewItem.type}
             onChange={handleControlledInputChange}
           />
         </div>

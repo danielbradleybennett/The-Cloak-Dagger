@@ -7,22 +7,25 @@ import "./BrewMonsters.css"
 export default (props) => {
 
     const { brewMonsters } = useContext(BrewMonstersContext)
+    const currentUserId = parseInt(localStorage.getItem("currentUserId"), 10)
+    const currentUserMonsters = brewMonsters.filter(monster => monster.userId === currentUserId)
+
 
     return (
-      <>
-        <button onClick={
-        () => props.history.push("/brewery/monsterList/create")}>
-        New Monster
+        <>
+            <button onClick={
+                () => props.history.push("/brewery/monsterList/create")}>
+                New Monster
         </button>
-       
-        <div className="brewMonsters">
-        {
-            brewMonsters.map(brewMonster => {
-                return <BrewMonsters key={brewMonster.id} brewMonster={brewMonster} />
-            })
-        }
-        </div>
-    </>
-    
+
+            <div className="brewMonsters">
+                {
+                    currentUserMonsters.map(brewMonster => {
+                        return <BrewMonsters key={brewMonster.id} brewMonster={brewMonster} />
+                    })
+                }
+            </div>
+        </>
+
     )
 }

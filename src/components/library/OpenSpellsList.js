@@ -7,7 +7,7 @@ export default (props) => {
   
 
   
-    console.log(props.spells)
+  
     return (
 
       <>

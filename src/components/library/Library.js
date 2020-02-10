@@ -1,7 +1,8 @@
 import React, {useState, useContext, useEffect} from "react";
 import Search from "../search/Search";
-import OpenSpells from "./OpenSpellsList";
+
 import OpenSpellsList from "./OpenSpellsList";
+import OpenMonstersList from "../monsters/OpenMonstersList";
 
 
 
@@ -40,7 +41,7 @@ const renderList = (searchType, searchResults) => {
   console.log(searchResults)
   switch (searchType) {
     case "monsters":
-      component= null;
+      component= <OpenMonstersList monsters={searchResults.results}/>
       break;
     case "spells":
       component = <OpenSpellsList spells={searchResults.results}/>
@@ -55,7 +56,7 @@ const renderList = (searchType, searchResults) => {
 return (
   <div>
     <Search handleSubmit={handleSubmit}/>
-<h2>Number Results: {searchResults.count}</h2>
+{/* <h2>Number Results: {searchResults.count}</h2> */}
     {/* <p>
       {JSON.stringify(searchResults)}
       </p> */}
