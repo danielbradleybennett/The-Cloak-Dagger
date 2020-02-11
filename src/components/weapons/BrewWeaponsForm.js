@@ -124,7 +124,7 @@ export default props => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="noteDesc">Description: </label>
-            <input type="text" name="desc" required className="form-control"
+            <textarea type="text" name="desc" required className="form-control"
               proptype="varchar"
               placeholder="Weapon Description"
               defaultValue={brewWeapon.desc}
