@@ -41,7 +41,10 @@ export default props => {
       editBrewArmor({
         id: armor.id,
         name: armor.name,
+        type: armor.type,
         desc: armor.desc,
+        rarity: armor.rarity,
+        value: armor.value,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
@@ -51,6 +54,8 @@ export default props => {
         id: armor.id,
         name: armor.name,
         desc: armor.desc,
+        rarity: armor.rarity,
+        value: armor.value,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
@@ -67,7 +72,7 @@ export default props => {
       
       <fieldset>
         <div className="form-group">
-          <label htmlFor="name">Armor Name: </label>
+          <label htmlFor="name">Name: </label>
           <input type="text" name="name" required autoFocus className="form-control"
             proptype="varchar"
             placeholder="Armor Name"
@@ -79,11 +84,47 @@ export default props => {
 
       <fieldset>
         <div className="form-group">
-          <label htmlFor="armorDesc">Armor Description: </label>
-          <input type="text" name="desc" required className="form-control"
+          <label htmlFor="armorType">Type: </label>
+          <input type="text" name="type" required className="form-control"
+            proptype="varchar"
+            placeholder="Armor Type"
+            defaultValue={armor.type}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="armorDesc">Description: </label>
+          <textarea type="text" name="desc" required className="form-control"
             proptype="varchar"
             placeholder="Armor Description"
             defaultValue={armor.desc}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="armorValue">Value: </label>
+          <input type="text" name="value" required className="form-control"
+            proptype="varchar"
+            placeholder="Armor Value"
+            defaultValue={armor.value}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div className="form-group">
+          <label htmlFor="armorRarity">Rarity: </label>
+          <input type="text" name="rarity" required className="form-control"
+            proptype="varchar"
+            placeholder="Armor Rarity"
+            defaultValue={armor.rarity}
             onChange={handleControlledInputChange}
           />
         </div>
