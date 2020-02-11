@@ -1,12 +1,13 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { Fragment, useContext, useState, useEffect } from "react"
 import { BrewMonstersContext } from "./BrewMonstersDataProvider"
 
 
 
 export default props => {
-  
+
   const { addBrewMonsters, brewMonsters, editBrewMonsters } = useContext(BrewMonstersContext)
   const [brewMonster, setBrewMonsters] = useState({})
+  
 
   const editMode = props.match.params.hasOwnProperty("brewMonstersId")
 
@@ -28,21 +29,26 @@ export default props => {
     }
   }
 
+  
+
+
+
   useEffect(() => {
     setDefaults()
   }, [brewMonsters])
 
-  
+
 
   const constructNewBrewMonsters = () => {
-    
+
 
     if (editMode) {
       editBrewMonsters({
         id: brewMonster.id,
         name: brewMonster.name,
-        type: brewMonster.type, 
+        type: brewMonster.type,
         size: brewMonster.size,
+        speed: brewMonster.speed,
         alignment: brewMonster.alignment,
         armor_class: brewMonster.armor_class,
         hit_points: brewMonster.hit_points,
@@ -62,8 +68,9 @@ export default props => {
       addBrewMonsters({
         id: brewMonster.id,
         name: brewMonster.name,
-        type: brewMonster.type, 
+        type: brewMonster.type,
         size: brewMonster.size,
+        speed: brewMonster.speed,
         alignment: brewMonster.alignment,
         armor_class: brewMonster.armor_class,
         hit_points: brewMonster.hit_points,
@@ -76,9 +83,9 @@ export default props => {
         desc: brewMonster.desc,
         actions: brewMonster.actions,
         abilities: brewMonster.abilities,
-        
+
         userId: parseInt(localStorage.getItem("currentUserId")),
-        
+
       })
         .then(() => props.history.push("/brewery/monsterList"))
     }
@@ -86,121 +93,227 @@ export default props => {
   }
 
   return (
-   
-<div className="BrewMonstersContainer">
-    <form className="BrewMonstersBrewMonsters">
-      <h2 className="BrewMonstersBrewMonsters__title">{editMode ? "Update BrewMonsters" : "Add BrewMonsters"}</h2>
-      
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="name">Monster Name: </label>
-          <input type="text" name="name" required autoFocus className="form-control"
-            proptype="varchar"
-            placeholder="BrewMonsters name"
-            defaultValue={brewMonster.name}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="monster_size">Size: </label>
-          <input type="text" name="size" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Size"
-            defaultValue={brewMonster.size}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+    <div className="BrewMonstersContainer">
+      <form className="BrewMonstersBrewMonsters">
+        <h2 className="BrewMonstersBrewMonsters__title">{editMode ? "Update Monster" : "Create Monster"}</h2>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="monster_type">Monster Type: </label>
-          <input type="text" name="type" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Type"
-            defaultValue={brewMonster.type}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="name">Monster Name: </label>
+            <input type="text" name="name" required autoFocus className="form-control"
+              proptype="varchar"
+              placeholder="Monsters Name"
+              defaultValue={brewMonster.name}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="monster_alignment">Alignment: </label>
-          <input type="text" name="alignment" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Alignment"
-            defaultValue={brewMonster.alignment}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="monster_size">Size: </label>
+            <input type="text" name="size" required className="form-control"
+              proptype="varchar"
+              placeholder="Monster Size"
+              defaultValue={brewMonster.size}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="monster_class">Armor Class: </label>
-          <input type="text" name="armor_class" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Armor Class"
-            defaultValue={brewMonster.armor_class}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="monster_type">Type: </label>
+            <input type="text" name="type" required className="form-control"
+              proptype="varchar"
+              placeholder="Monster Type"
+              defaultValue={brewMonster.type}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="MonsterDesc">Hitpoints: </label>
-          <input type="text" name="hit_points" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Hitpoints"
-            defaultValue={brewMonster.hitpoints}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="monster_alignment">Alignment: </label>
+            <input type="text" name="alignment" required className="form-control"
+              proptype="varchar"
+              placeholder="Monster Alignment"
+              defaultValue={brewMonster.alignment}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="monster_speed">Speed: </label>
-          <input type="text" name="speed" required className="form-control"
-            proptype="varchar"
-            placeholder="Monster Speed"
-            defaultValue={brewMonster.speed}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="monster_class">Armor Class: </label>
+            <input type="text" name="armor_class" required className="form-control"
+              proptype="varchar"
+              placeholder="Monster Armor Class"
+              defaultValue={brewMonster.armor_class}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="MonsterDesc">Hitpoints: </label>
+            <input type="text" name="hit_points" required className="form-control"
+              proptype="varchar"
+              placeholder="Monster Hitpoints"
+              defaultValue={brewMonster.hit_points}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="monster_speed">Speed: </label>
+            <input type="text" name="speed" required className="form-control"
+              proptype="varchar"
+              placeholder="Speed"
+              defaultValue={brewMonster.speed}
+              onChange={handleControlledInputChange}
+            />
+          </div>
+        </fieldset>
 
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="hitpoints">Monster Hitpoints: </label>
-          <input type="text" name="hitpoints" className="form-control"
-            proptype="integer"
-            placeholder="hitpoints"
-            defaultValue={brewMonster.hitpoints}
-            onChange={handleControlledInputChange}>
-          </input>
-        </div>
-      </fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="strength">Strength: </label>
+            <input type="text" name="strength" className="form-control"
+              proptype="integer"
+              placeholder="Strength"
+              defaultValue={brewMonster.strength}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="MonsterType">Armor Class </label>
-          <input type="text" name="armor" className="form-control"
-            proptype="varchar"
-            placeholder="Armor Class"
-            value={brewMonster.armor}
-            onChange={handleControlledInputChange}>
-          </input>
-        </div>
-      </fieldset>
-{/* fill out later */}
-      {/* <fieldset>
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="dexterity">Dexterity </label>
+            <input type="text" name="dexterity" className="form-control"
+              proptype="varchar"
+              placeholder="Dexterity"
+              value={brewMonster.dexterity}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="constitution">Constitution </label>
+            <input type="text" name="constitution" className="form-control"
+              proptype="varchar"
+              placeholder="Constitution"
+              value={brewMonster.constitution}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="intelligence">Intelligence </label>
+            <input type="text" name="intelligence" className="form-control"
+              proptype="varchar"
+              placeholder="Intelligence"
+              value={brewMonster.intelligence}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="wisdom">Wisdom </label>
+            <input type="text" name="wisdom" className="form-control"
+              proptype="varchar"
+              placeholder="Wisdom"
+              value={brewMonster.wisdom}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="charisma">Charisma </label>
+            <input type="text" name="charisma" className="form-control"
+              proptype="varchar"
+              placeholder="Charisma"
+              value={brewMonster.charisma}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="desc">Description </label>
+            <input type="text" name="desc" className="form-control"
+              proptype="varchar"
+              placeholder="Description"
+              value={brewMonster.description}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div className="form-group">
+            <label htmlFor="actions">Actions </label>
+            <input type="text" name="actions" className="form-control"
+              proptype="varchar"
+              placeholder="Actions"
+              value={brewMonster.actions}
+              onChange={handleControlledInputChange}>
+            </input>
+          </div>
+        </fieldset>
+
+        {/* <fieldset onSubmit={handleSubmit}>
+          {inputFields.map((inputField, index) => (
+            <Fragment key={`${inputField}~${index}`}>
+              <div className="form-group">
+                <label htmlFor="abilities">Abilities </label>
+                <input type="text" name="abilities" className="form-control"
+                  proptype="varchar"
+                  placeholder="Abilities"
+                  value={brewMonster.abilities}
+                  onChange={event => handleInputChange(index, event)}>
+                </input>
+              </div>
+
+              <div className="form-group col-sm-2">
+                <button
+                  className="btn btn-link"
+                  type="button"
+                  onClick={() => handleRemoveFields(index)}
+                >
+                  -
+                </button>
+                <button
+                  className="btn btn-link"
+                  type="button"
+                  onClick={() => handleAddFields()}
+                >
+                  +
+                </button>
+              </div>
+            </Fragment>
+          ))}
+        </fieldset> */}
+
+        {/* fill out later */}
+        {/* <fieldset>
         <div className="form-group">
           <label htmlFor="MonsterCasterType">Monster Caster Type: </label>
           <input type="text" name="MonsterCasterType" className="form-control"
@@ -241,15 +354,15 @@ export default props => {
 
 
 
-      <button type="submit"
-        onClick={evt => {
-          evt.preventDefault()
-          constructNewBrewMonsters()
-        }}
-        className="btn btn-primary">
-        {editMode ? "Save Updates" : "Save BrewMonsters"}
-      </button>
-    </form>
+        <button type="submit"
+          onClick={evt => {
+            evt.preventDefault()
+            constructNewBrewMonsters()
+          }}
+          className="btn btn-primary">
+          {editMode ? "Save Update" : "Save Monster"}
+        </button>
+      </form>
     </div>
   )
 }

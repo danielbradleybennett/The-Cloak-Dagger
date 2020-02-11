@@ -23,7 +23,7 @@ export default props => {
   const setDefaults = () => {
     if (editMode) {
       const theWorldId = parseInt(props.match.params.theWorldId)
-      const selectedTheWorld = world.find(w => w.id === theWorldId) || {}
+      const selectedTheWorld = theWorld.find(w => w.id === theWorldId) || {}
       setTheWorld(selectedTheWorld)
     }
   }

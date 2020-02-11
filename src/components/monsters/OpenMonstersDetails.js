@@ -27,7 +27,7 @@ export default (props) => {
 
 //       })}) 
   
-  
+  console.log(monster.actions, "this is the monster")
 
   return (
     <section className="monster">
@@ -38,25 +38,14 @@ export default (props) => {
       <div className="monster__caster">{monster.alignment}</div>
       
      
-      <div className="monster__duration">{monster.actions.map(action => {
-        return (
+      <div className="monster__duration">
+        {monster.actions.map(action => 
           <>
             <div>{action.desc}</div>
               <div>{action.name}</div>
-
-
-
-
           </>
-
-
-
-        )
-              
-
-
-
-      })}</div>
+    )}
+    </div>
     </section>
     )
   }
