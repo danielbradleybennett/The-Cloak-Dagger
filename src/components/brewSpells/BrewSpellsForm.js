@@ -129,7 +129,11 @@ export default props => {
               name="typeId"
               ref={type}
               id="spellType"
+              onChange={handleControlledInputChange}
               className="form-control">
+              
+             
+              
                 
               <option value="0">Select a Spell Type</option>
               {spellType.map(st => (
@@ -219,7 +223,7 @@ export default props => {
             constructNewBrewSpells()
           }}
           className="btn btn-primary">
-          {editMode ? "Save Updates" : "Save BrewSpells"}
+          {editMode ? "Save Updates" : "Save Spells"}
         </button>
       </form>
     </div>

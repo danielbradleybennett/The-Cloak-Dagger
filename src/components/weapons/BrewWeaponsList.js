@@ -9,7 +9,7 @@ export default (props) => {
   const { brewWeapons } = useContext(BrewWeaponsContext)
   const currentUserId = parseInt(localStorage.getItem("currentUserId"), 10)
   const currentUserWeapons = brewWeapons.filter(weapon => weapon.userId === currentUserId)
-  
+  console.log(currentUserWeapons)
   
   
     
