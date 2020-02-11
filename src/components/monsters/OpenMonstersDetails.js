@@ -11,7 +11,7 @@ export default (props) => {
 
   const monsterSlug = props.match.params.monsterSlug
 
-  const [monster, setMonster] = useState({})
+  const [monster, setMonster] = useState({actions:[]})
   
   useEffect(()=>{
     fetch(`https://api.open5e.com/monsters/${monsterSlug}`)
@@ -38,11 +38,25 @@ export default (props) => {
       <div className="monster__caster">{monster.alignment}</div>
       
      
-      {/* <div className="monster__duration">{monster.actions.map(action => {
-        return action.desc
+      <div className="monster__duration">{monster.actions.map(action => {
+        return (
+          <>
+            <div>{action.desc}</div>
+              <div>{action.name}</div>
 
 
-      })}</div> */}
+
+
+          </>
+
+
+
+        )
+              
+
+
+
+      })}</div>
     </section>
     )
   }

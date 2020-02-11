@@ -14,7 +14,11 @@ export default (props) => {
   return (
     <section className="brewWeaponsDetail">
       <h3 className="brewWeaponsDetail__name">{weapon.name}</h3>
+      <div className="brewWeaponsDetail__description">{weapon.type}</div>
+      <div className="brewWeaponsDetail__description">{weapon.damage}</div>
       <div className="brewWeaponsDetail__description">{weapon.desc}</div>
+      <div className="brewWeaponsDetail__description">{weapon.value}</div>
+      <div className="brewWeaponsDetail__description">{weapon.rarity}</div>
       
       <button onClick={() => {
         props.history.push(`/brewery/weaponList/edit/${weapon.id}`)

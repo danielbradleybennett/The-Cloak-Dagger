@@ -42,6 +42,7 @@ export default props => {
         id: brewItem.id,
         name: brewItem.name,
         desc: brewItem.desc,
+        rarity: brewItem.rarity,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
@@ -51,6 +52,8 @@ export default props => {
         id: brewItem.id,
         name: brewItem.name,
         desc: brewItem.desc,
+        value: brewItem.value,
+        rarity: brewItem.rarity,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
