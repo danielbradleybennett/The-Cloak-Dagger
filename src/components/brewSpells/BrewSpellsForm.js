@@ -99,7 +99,7 @@ export default props => {
         <fieldset>
           <div className="form-group">
             <label htmlFor="spellDesc">Description: </label>
-            <input type="text" name="description" required className="form-control"
+            <textarea type="text" name="description" required className="form-control"
               proptype="varchar"
               placeholder="Spell Description"
               defaultValue={brewSpell.description}
@@ -132,10 +132,7 @@ export default props => {
               onChange={handleControlledInputChange}
               className="form-control">
               
-             
-              
-                
-              <option value="0">Select a Spell Type</option>
+               <option value="0">Select a Spell Type</option>
               {spellType.map(st => (
                 <option key={st.id} value={st.id}>
                   {st.name}
