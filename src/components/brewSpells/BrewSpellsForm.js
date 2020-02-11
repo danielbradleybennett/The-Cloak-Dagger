@@ -1,20 +1,31 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { BrewSpellsContext } from "./BrewSpellsDataProvider"
-import {SpellTypeContext} from "./SpellTypeProvider"
-import {SpellCasterContext} from "./SpellCasterProvider"
+import { SpellTypeContext } from "./SpellTypeProvider"
+import { SpellCasterContext } from "./SpellCasterProvider"
+import Checkbox from "./CheckBox"
+
 
 
 
 export default props => {
 
-  const {spellCaster} = useContext(SpellCasterContext)
-  const {spellType} = useContext(SpellTypeContext)
+  const { spellCaster } = useContext(SpellCasterContext)
+  const { spellType } = useContext(SpellTypeContext)
   const { addBrewSpells, brewSpells, editBrewSpells } = useContext(BrewSpellsContext)
   const [brewSpell, setBrewSpells] = useState({})
+  const [checkedCaster, setCheckedCaster] = useState({})
+
   const type = useRef(0)
-  console.log(spellType)
+
 
   const editMode = props.match.params.hasOwnProperty("brewSpellsId")
+
+  const handleChange = (event) => {
+   
+    const chosenCaster = Object.assign({}, checkedCaster)
+    chosenCaster[event.target.name] = event.target.checked
+    setCheckedCaster(chosenCaster)
+  }
 
   const handleControlledInputChange = (event) => {
     /*
@@ -33,6 +44,12 @@ export default props => {
       setBrewSpells(selectedBrewSpells)
     }
   }
+
+  // handle multiselect
+  // handleSelectionChange = (event) => {
+  //   const seletedCaster = event.target.value
+  //   setSelectedCaster(selectedCaster)
+  // }
 
   useEffect(() => {
     setDefaults()
@@ -72,7 +89,7 @@ export default props => {
         userId: parseInt(localStorage.getItem("currentUserId")),
 
       })
-    
+
         .then(() => props.history.push("/brewery/spellList"))
     }
 
@@ -119,7 +136,7 @@ export default props => {
             </input>
           </div>
         </fieldset>
-        
+
         {/* dropdown */}
         <fieldset>
           <div className="form-group">
@@ -131,46 +148,38 @@ export default props => {
               id="spellType"
               onChange={handleControlledInputChange}
               className="form-control">
-              
-               <option value="0">Select a Spell Type</option>
+
+              <option value="0">Select a Spell Type</option>
               {spellType.map(st => (
                 <option key={st.id} value={st.id}>
                   {st.name}
-                  
+
                 </option>
               ))
-            
+
               }
-              
+
             </select>
           </div>
         </fieldset>
 
-        {/* <fieldset>
-          <div className="form-group">
-            <label htmlFor="casterId">Spell Caster </label>
-            <select
-              defaultValue=""
-              name="casterId"
-              ref={type}
-              id="spellCaster"
-              className="form-control">
-                
-              <option value="0">Select a Caster</option>
-              {spellCaster.map(st => (
-                <option key={st.id} value={st.id}>
-                  {st.name}
-                  
-                </option>
+        <fieldset>
+          <div>
+            <lable>Caster Type : {checkedCaster["Druid"]} </lable> <br />
+            {
+              spellCaster.map(sc => (
+                <label key={sc.key}>
+                  {sc.name}
+                  <Checkbox name={sc.name} checked={checkedCaster[sc.name]} onChange={handleChange} />
+                </label>
               ))
-            
-              }
-              
-            </select>
+            }
           </div>
-        </fieldset> */}
 
-        
+          
+          </fieldset>
+
+
         <fieldset>
           <div className="form-group">
             <label htmlFor="spellType">Level: </label>
@@ -181,9 +190,9 @@ export default props => {
               onChange={handleControlledInputChange}>
             </input>
           </div>
-        </fieldset> 
-        
-       
+        </fieldset>
+
+
 
         <fieldset>
           <div className="form-group">
