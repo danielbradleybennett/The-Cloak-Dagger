@@ -3,6 +3,7 @@ import { BrewSpellsContext } from "./BrewSpellsDataProvider"
 import { SpellTypeContext } from "./SpellTypeProvider"
 import { SpellCasterContext } from "./SpellCasterProvider"
 import Checkbox from "./CheckBox"
+import { SpellSpellCasterContext } from "./SpellSpellCasterProvider"
 
 
 
@@ -10,8 +11,9 @@ import Checkbox from "./CheckBox"
 export default props => {
 
   const { spellCaster } = useContext(SpellCasterContext)
+  const {addSpellSpellCaster} = useContext(SpellSpellCasterContext)
   const { spellType } = useContext(SpellTypeContext)
-  const { addBrewSpells, brewSpells, editBrewSpells } = useContext(BrewSpellsContext)
+  const { addBrewSpells, brewSpells, editBrewSpells, getBrewSpells } = useContext(BrewSpellsContext)
   const [brewSpell, setBrewSpells] = useState({})
   const [checkedCaster, setCheckedCaster] = useState({})
 
@@ -44,12 +46,6 @@ export default props => {
       setBrewSpells(selectedBrewSpells)
     }
   }
-
-  // handle multiselect
-  // handleSelectionChange = (event) => {
-  //   const seletedCaster = event.target.value
-  //   setSelectedCaster(selectedCaster)
-  // }
 
   useEffect(() => {
     setDefaults()
@@ -89,6 +85,21 @@ export default props => {
         userId: parseInt(localStorage.getItem("currentUserId")),
 
       })
+
+      // Join table for SpellSpellCaster Provider
+        .then((spell) => {
+          const spellId = spell.id
+          for(const key in checkedCaster){
+          if(checkedCaster[key] === true) {
+            const caster = spellCaster.find(caster => caster.name === key)  
+
+          addSpellSpellCaster({spellId: spellId, 
+                                 caster: caster.id
+                                })}
+        }})
+      
+        .then(getBrewSpells)
+        
 
         .then(() => props.history.push("/brewery/spellList"))
     }
@@ -153,19 +164,15 @@ export default props => {
               {spellType.map(st => (
                 <option key={st.id} value={st.id}>
                   {st.name}
-
                 </option>
-              ))
-
-              }
-
+              ))}
             </select>
           </div>
         </fieldset>
 
         <fieldset>
           <div>
-            <lable>Caster Type : {checkedCaster["Druid"]} </lable> <br />
+            <lable>Caster Type : {checkedCaster["Druid"]}</lable> <br />
             {
               spellCaster.map(sc => (
                 <label key={sc.key}>
@@ -235,3 +242,4 @@ export default props => {
     </div>
   )
 }
+

@@ -46,8 +46,9 @@ export const BrewSpellsProvider = (props) => {
             },
             body: JSON.stringify(brewSpells)
         })
-            .then(getBrewSpells)
-    }
+            .then((result) => result.json())
+        }
+       
 
     /*
         Load all BrewSpells when the component is mounted. Ensure that
