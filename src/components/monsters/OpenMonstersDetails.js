@@ -19,15 +19,7 @@ export default (props) => {
       .then(setMonster)
   }, [])
   
-  console.log(monster.actions)
-  
-// monster.actions.forEach(actionObj => {
-//         Object.keys(actionObj).forEach((key, index) => 
-//         {console.log(key, actionObj[key])
 
-//       })}) 
-  
-  console.log(monster.actions, "this is the monster")
 
   return (
     <section className="monster">
@@ -36,7 +28,23 @@ export default (props) => {
       <div className="monster__range">{monster.type}</div>
       <div className="monster__description">{monster.desc}</div>
       <div className="monster__caster">{monster.alignment}</div>
-      
+      <div className="monster__armor_class">AC: {monster.armor_class}</div>
+      <div className="monster__hit_points">HP{monster.hit_points}</div>
+      {/* <div className="monster__speed">{monster.speed}</div> */}
+      <div className="monster__strength">Strength{monster.strength}</div>
+      <div className="monster__dexterity">Dexterity: {monster.dexterity}</div>
+      <div className="monster__constitution">Constitution: {monster.constitution}</div>
+      <div className="monster__intelligence">Intelligence: {monster.intelligence}</div>
+      <div className="monster__wisdom">Wisdom: {monster.wisdom}</div>
+      <div className="monster__charisma">Charisma: {monster.charisma}</div>
+      <div className="monster__perception">{monster.perception}</div>
+      {/* <div className="monster__skills">{monster.skills}</div> */}
+      <div className="monster__damage_vulnerabilities">{monster.damage_vulnerabilities}</div>
+      <div className="monster__damage_resistances">{monster.damage_resistances}</div>
+      <div className="monster__condition_immunities">{monster.condition_immunities}</div>
+      <div className="monster__senses">{monster.senses}</div>
+      <div className="monster__languages">{monster.languages}</div>
+      <div className="monster__challenge_rating">{monster.challenge_rating}</div>
      
       <div className="monster__duration">
         {monster.actions.map(action => 
@@ -44,8 +52,14 @@ export default (props) => {
             <div>{action.desc}</div>
               <div>{action.name}</div>
           </>
-    )}
-    </div>
+        )}
+      </div>
+      
+      <div className="monster__reactions">{monster.reactions}</div>
+      {/* <div className="monster__legendary_desc">{monster.legendary_desc}</div>
+      <div className="monster__legendary_actions">{monster.legendary_actions}</div>
+      <div className="monster__special_abilities">{monster.special_abilities}</div>
+      <div className="monster__spell_list">{monster.spell_list}</div> */}
     </section>
     )
   }

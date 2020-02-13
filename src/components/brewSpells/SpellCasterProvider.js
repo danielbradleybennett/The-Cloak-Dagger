@@ -13,13 +13,13 @@ export const SpellCasterProvider = (props) => {
     const [spellCaster, setSpellCaster] = useState([])
 
     const getSpellCaster = () => {
-        return fetch("http://localhost:8088/spellCaster")
+        return fetch("http://localhost:8088/spellCasters")
             .then(res => res.json())
             .then(setSpellCaster)
     }
 
     const addSpellCaster = spellCaster => {
-      return fetch("http://localhost:8088/spellCaster", {
+      return fetch("http://localhost:8088/spellCasters", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"
