@@ -67,7 +67,7 @@ export default props => {
         typeId: typeId,
         level: brewSpell.level,
         duration: brewSpell.duration,
-        // casterId: casterId,
+       
         range: brewSpell.range,
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
@@ -79,29 +79,30 @@ export default props => {
         castingTime: brewSpell.castingTime,
         typeId: typeId,
         level: brewSpell.level,
-        // casterId: casterId,
+       
         duration: brewSpell.duration,
         range: brewSpell.range,
         userId: parseInt(localStorage.getItem("currentUserId")),
 
       })
-
+       
       // Join table for SpellSpellCaster Provider
         .then((spell) => {
           const spellId = spell.id
           for(const key in checkedCaster){
           if(checkedCaster[key] === true) {
-            const caster = spellCaster.find(caster => caster.name === key)  
+            const spellCasterId = spellCaster.find(caster => caster.name === key)  
 
           addSpellSpellCaster({spellId: spellId, 
-                                 caster: caster.id
+            spellCasterId: spellCasterId.id
                                 })}
         }})
       
         .then(getBrewSpells)
         
-
         .then(() => props.history.push("/brewery/spellList"))
+       
+        
     }
 
   }

@@ -14,21 +14,27 @@ export default (props) => {
 
   const chosenSpellId = parseInt(props.match.params.brewSpellsId, 10)
   
-  
+  // let arrayOfCasters = []
+  // const casters = casterIds.map(c => {
+  //   spellCaster.map(caster => {
+  //     if (c.caster === caster.id) {
+  //       arrayOfCasters.push(caster)
+  //     }
+  //   })
+  //   console.log(casters)
+  // }
 
 
   const spell = brewSpells.find(s => s.id === chosenSpellId) || {}
   const type = spellType.find(st => st.id === spell.typeId) || {}
-  
+  console.log(type)
+ 
 
   
   
-  const casterIds = spellSpellCaster.filter(s => s.spellId === spell.id) || []
+  const casters = spellSpellCaster.filter(s => s.spellId === spell.id) || []
+  console.log(casters, "caster")
   
-  const casters = casterIds.map(c => spellCaster.find(sc => sc.id === c.casterId)) || []
-  console.log(casters)
-
-
 
 
   return (
@@ -39,6 +45,18 @@ export default (props) => {
       <div className="spell__range">Range:{spell.range}</div>
       <br></br>
       <div className="spell__description">{spell.description}</div>
+      <div>
+        {casters.map(n => 
+          <>
+            <div>{n.spellCaster.name}</div>
+            
+          </>
+        )}
+        
+        </div> 
+        
+        
+      
       
       
 

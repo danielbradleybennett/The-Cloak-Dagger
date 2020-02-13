@@ -13,7 +13,7 @@ export const SpellSpellCasterProvider = (props) => {
     const [spellSpellCaster, setSpellSpellCaster] = useState([])
 
     const getSpellSpellCaster = () => {
-        return fetch("http://localhost:8088/spellSpellCaster")
+        return fetch("http://localhost:8088/spellSpellCaster?_expand=spellCaster")
             .then(res => res.json())
             .then(setSpellSpellCaster)
     }

@@ -56,10 +56,6 @@ const renderList = (searchType, searchResults) => {
 return (
   <div>
     <Search handleSubmit={handleSubmit}/>
-{/* <h2>Number Results: {searchResults.count}</h2> */}
-    {/* <p>
-      {JSON.stringify(searchResults)}
-      </p> */}
 
       {
         renderList(searchType, searchResults)
