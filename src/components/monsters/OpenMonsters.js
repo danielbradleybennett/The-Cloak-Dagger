@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export default ({ openMonster }) => (
     <section className="OpenMonsters">
         <h3 className="open__monsters">
-            <Link to={`/library/monsters/${openMonster.slug}`}>
+            <Link className="monster__link" to={`/library/monsters/${openMonster.slug}`}>
                 { openMonster.name }
             </Link>
             

@@ -40,6 +40,7 @@ import OpenMonstersDetails from "./monsters/OpenMonstersDetails"
 
 
 
+
 export default (props) => {
     return (
         <>
@@ -55,13 +56,14 @@ export default (props) => {
                                         <BrewWeaponsProvider>
                                             <BrewItemsProvider>
                                                 <BrewArmorProvider>
+                                                 
 
 
 
 
 
 
-
+                                                  <section className="note_world">
                                                     <Route path="/vyasa">
                                                         <div>
                                                             <button onClick={() => props.history.push("/vyasa/notesList")}>
@@ -76,6 +78,9 @@ export default (props) => {
                                                         </button>
                                                         </div>
                                                     </Route>
+                                                    
+                                                  </section>
+
                                                     <section className="Button">
                                                         <Route path="/brewery">
                                                             <div>
@@ -118,8 +123,12 @@ export default (props) => {
 
                                                     {/* The Spells Routes */}
                                                     <Route exact path="/brewery/spellList/:brewSpellsId(\d+)" render={
-                                                        props => <BrewSpellsDetails {...props} />
+                                                        props => <BrewSpellsDetails {...props}  />
                                                     } />
+
+                                                    <Route exact path="/brewery/spellList/:spellSpellCasterId(\d+)"
+                                                        {...props} />
+                                                    
 
 
                                                     <Route exact path="/brewery/spellList/create" render={
@@ -151,9 +160,9 @@ export default (props) => {
                                                         props => <BrewMonstersForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/brewery/monsterList/create" render={
+                                                    {/* <Route exact path="/brewery/monsterList/create" render={
                                                         props => <BrewMonstersList {...props} />
-                                                    } />
+                                                    } /> */}
 
                                                     <Route exact path="/brewery/monsterList/edit/:brewMonstersId(\d+)" render={
                                                         props => <BrewMonstersForm {...props} />
@@ -256,7 +265,7 @@ export default (props) => {
                                                     } />
 
 
-
+                                                 
                                                 </BrewArmorProvider>
                                             </BrewItemsProvider>
                                         </BrewWeaponsProvider>

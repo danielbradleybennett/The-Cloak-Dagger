@@ -9,20 +9,22 @@ import { SpellCasterContext } from "./SpellCasterProvider"
 export default (props) => {
   const { brewSpells, deleteBrewSpells } = useContext(BrewSpellsContext)
   const {spellType} = useContext(SpellTypeContext)
-  const {spellSpellCaster} = useContext(SpellSpellCasterContext)
+  const {spellSpellCaster, deleteSpellSpellCaster} = useContext(SpellSpellCasterContext)
   const {spellCaster} = useContext(SpellCasterContext)
 
   const chosenSpellId = parseInt(props.match.params.brewSpellsId, 10)
+ 
+
+  const spellSpell = brewSpells.filter(sc => sc.id === spellSpellCaster.spellId)
+  const chosenSpellSpell = parseInt(props.match.params.brewSpellsId, 10)
+  // const spellSpellTable = spellSpellCaster.filter(s => spellId === )
+  // const spellSpell = spellSpellCaster.find(ss => ss.spellId === chosenSpellId) || {}
+  // const spellSpellJoin = spellSpellTable.find(sst => sst.spellId === chosenSpellId)
+
+
+
   
-  // let arrayOfCasters = []
-  // const casters = casterIds.map(c => {
-  //   spellCaster.map(caster => {
-  //     if (c.caster === caster.id) {
-  //       arrayOfCasters.push(caster)
-  //     }
-  //   })
-  //   console.log(casters)
-  // }
+  
 
 
   const spell = brewSpells.find(s => s.id === chosenSpellId) || {}
@@ -55,15 +57,9 @@ export default (props) => {
         
         </div> 
         
-        
-      
-      
-      
-
 
       <button onClick={() => {
-        props.history.push(`/brewery/spellList/edit/${spell.id}`)
-      }
+        props.history.push(`/brewery/spellList/edit/${spell.id}`)}
       
       }>Edit</button>
   
@@ -73,8 +69,10 @@ export default (props) => {
           deleteBrewSpells(spell)
             .then(() => {
               props.history.push("/brewery/spellList")
-            })
-        }
+            }) }
+        
+
+
       }>Delete</button>
 
     

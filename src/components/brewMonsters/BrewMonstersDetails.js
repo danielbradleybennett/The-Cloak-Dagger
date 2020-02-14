@@ -28,9 +28,8 @@ export default (props) => {
       <div className="monster__intelligence">Intelligence: {monster.intelligence}</div>
       <div className="monster__wisdom">Wisdom: {monster.wisdom}</div>
       <div className="monster__charisma">Charisma: {monster.charisma}</div>
-      <div className="monster__description">Description: {monster.desc}</div>
-      <div className="monster__size">Actions: {monster.actions}</div>
-      <div className="monster__size">Abilities: {monster.abilities}</div>
+      <div className="monster__actions">Actions: {monster.actions}</div>
+      
 
       
       <button onClick={() => {

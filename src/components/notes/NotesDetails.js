@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { NotesContext } from "./NotesDataProvider"
-// import "./Notes.css"
+import "./Notes.css"
 
 
 export default (props) => {

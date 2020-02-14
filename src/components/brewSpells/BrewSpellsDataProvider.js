@@ -66,7 +66,7 @@ export const BrewSpellsProvider = (props) => {
 
     return (
         <BrewSpellsContext.Provider value={{
-            brewSpells, addBrewSpells, deleteBrewSpells, editBrewSpells
+            brewSpells, addBrewSpells, deleteBrewSpells, editBrewSpells, getBrewSpells
         }}>
             {props.children}
         </BrewSpellsContext.Provider>

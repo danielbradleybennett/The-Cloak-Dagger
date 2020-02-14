@@ -172,7 +172,7 @@ export default props => {
         </fieldset>
 
         <fieldset>
-          <div>
+          <div className="checkedCaster">
             <lable>Caster Type : {checkedCaster["Druid"]}</lable> <br />
             {
               spellCaster.map(sc => (

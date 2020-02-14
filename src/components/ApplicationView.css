@@ -3,7 +3,10 @@
    
   /* justify-content: space-evenly; */
 
-
-
-
 }
+
+.note_world {
+  display: flex !important;
+  
+}
+

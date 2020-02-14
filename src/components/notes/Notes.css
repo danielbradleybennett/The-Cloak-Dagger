@@ -8,5 +8,27 @@
     flex-basis: 22%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid goldenrod;
+    
+}
+
+.brewNotes__link{
+  color: gold;
+   
+   text-decoration: none;
+   /* font-style: italic; */
+   font-family: Bradley Hand, cursive;
+   font-size: x-large;
+   font-weight: 300;
+
+
+}
+
+.notesDetail{
+  color: gold; 
+  text-decoration: none;
+  /* font-style: italic; */
+  font-family: Bradley Hand, cursive;
+  font-size: x-large;
+  font-weight: 300;
+
 }

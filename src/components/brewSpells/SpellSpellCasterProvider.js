@@ -29,6 +29,13 @@ export const SpellSpellCasterProvider = (props) => {
           .then(getSpellSpellCaster)
   }
 
+  const deleteSpellSpellCaster = spellSpellCaster => {
+    return fetch(`http://localhost:8088/spellSpellCaster/${spellSpellCaster.id}`, {
+        method: "DELETE"
+    })
+        .then(getSpellSpellCaster)
+}
+
   
 
 
@@ -49,7 +56,7 @@ export const SpellSpellCasterProvider = (props) => {
 
     return (
         <SpellSpellCasterContext.Provider value={{
-            spellSpellCaster, addSpellSpellCaster
+            spellSpellCaster, addSpellSpellCaster, deleteSpellSpellCaster
         }}>
             {props.children}
         </SpellSpellCasterContext.Provider>

@@ -4,7 +4,8 @@ import "./NavBar.css"
 
 export default (props) => {
     return (
-        <ul className="navbar">
+        <nav className="container">
+        <ul className="navbar ">
             
             <li className="navbar__item">
                 <Link className="navbar__link" to="/library">The Library</Link>
@@ -32,6 +33,7 @@ export default (props) => {
                 // what is this      ⬆
             }
         </ul>
+        </nav>
     )
 
 }
