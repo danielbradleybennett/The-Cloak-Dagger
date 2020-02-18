@@ -11,11 +11,12 @@ import { SpellSpellCasterContext } from "./SpellSpellCasterProvider"
 export default props => {
 
   const { spellCaster } = useContext(SpellCasterContext)
-  const {addSpellSpellCaster} = useContext(SpellSpellCasterContext)
+  const {spellSpellCaster, addSpellSpellCaster, deleteSpellSpellCaster} = useContext(SpellSpellCasterContext)
   const { spellType } = useContext(SpellTypeContext)
   const { addBrewSpells, brewSpells, editBrewSpells, getBrewSpells } = useContext(BrewSpellsContext)
   const [brewSpell, setBrewSpells] = useState({})
   const [checkedCaster, setCheckedCaster] = useState({})
+  const [initialChecked, setInitialChecked] = useState({})
 
   const type = useRef(0)
 
@@ -43,6 +44,16 @@ export default props => {
     if (editMode) {
       const brewSpellsId = parseInt(props.match.params.brewSpellsId)
       const selectedBrewSpells = brewSpells.find(bs => bs.id === brewSpellsId) || {}
+      const selectedSpellSpellCasters = spellSpellCaster.filter(s => s.spellId === brewSpellsId)
+      const checked = {} 
+      selectedSpellSpellCasters.forEach(caster => {
+        const caster1 = spellCaster.find(cs => cs.id === caster.spellCasterId) || {name:""}
+        const castername = caster1.name
+        checked[castername] = true
+      })
+      
+      setCheckedCaster(checked)
+      setInitialChecked(checked)
       setBrewSpells(selectedBrewSpells)
     }
   }
@@ -71,6 +82,24 @@ export default props => {
         range: brewSpell.range,
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
+        .then(() => {
+          const checked = Object.keys(checkedCaster).filter(key => checkedCaster[key] === true);
+          const initChecked = Object.keys(initialChecked).filter(key => initialChecked[key] === true);
+          const newCastersNames = checked.filter(caster => !initChecked.includes(caster))
+          const deletedCastersNames = initChecked.filter(caster => !checked.includes(caster))
+          const deletedItems = spellSpellCaster.filter(sc => sc.spellId === brewSpell.id && deletedCastersNames.includes(sc.spellCaster.name))
+          const genDeletePromises = () => deletedItems.map(deleteSpellSpellCaster)
+          const genAddPromises = () => newCastersNames.map((key) => {
+            const spellCasterId = spellCaster.find(caster => caster.name === key)  
+            return addSpellSpellCaster({
+              spellId: brewSpell.id, 
+              spellCasterId: spellCasterId.id
+            })
+          }
+                              
+          )
+          return Promise.all(genDeletePromises()).then(() => Promise.all(genAddPromises()));
+        })
         .then(() => props.history.push("/brewery/spellList"))
     } else {
       addBrewSpells({
@@ -106,7 +135,7 @@ export default props => {
     }
 
   }
-
+  //console.log(checkedCaster)
   return (
 
     <div className="BrewSpellsContainer">

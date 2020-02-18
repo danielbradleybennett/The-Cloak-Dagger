@@ -13,18 +13,8 @@ export default (props) => {
   const {spellCaster} = useContext(SpellCasterContext)
 
   const chosenSpellId = parseInt(props.match.params.brewSpellsId, 10)
+  
  
-
-  const spellSpell = brewSpells.filter(sc => sc.id === spellSpellCaster.spellId)
-  const chosenSpellSpell = parseInt(props.match.params.brewSpellsId, 10)
-  // const spellSpellTable = spellSpellCaster.filter(s => spellId === )
-  // const spellSpell = spellSpellCaster.find(ss => ss.spellId === chosenSpellId) || {}
-  // const spellSpellJoin = spellSpellTable.find(sst => sst.spellId === chosenSpellId)
-
-
-
-  
-  
 
 
   const spell = brewSpells.find(s => s.id === chosenSpellId) || {}
@@ -66,10 +56,18 @@ export default (props) => {
       <button onClick={
         () => {
           
-          deleteBrewSpells(spell)
-            .then(() => {
+          deleteBrewSpells(spell).then( () => {
+            const genPromises = () => {
+              return casters.map(caster =>
+              deleteSpellSpellCaster(caster)
+              ) 
+            } 
+              return Promise.all(genPromises())}).then(() => {
+            
+            
               props.history.push("/brewery/spellList")
-            }) }
+            }) 
+          }
         
 
 
