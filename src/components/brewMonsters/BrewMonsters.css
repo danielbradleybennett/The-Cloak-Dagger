@@ -1,12 +1,43 @@
-.brewMonsters {
+.brewMonsters__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  
 }
 
 .brewMonsters {
     flex-basis: 22%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid goldenrod;
+    /* border: 1px solid goldenrod; */
+}
+
+.brewMonsters__link{
+  color: gold;
+  text-decoration: none;
+  font-family: Bradley Hand, cursive;
+  font-size: 2em;
+  font-weight: 300;
+
+}
+
+.actions{
+  height: 50em;
+  width: 200em;
+
+}
+
+.monster__actions{
+  word-break: normal;
+  max-width: 300px;
+  white-space: pre-wrap;
+
+}
+
+.monster{
+  margin-left: 40px;
+
 }

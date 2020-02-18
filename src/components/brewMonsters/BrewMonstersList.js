@@ -18,7 +18,7 @@ export default (props) => {
                 New Monster
         </button>
 
-            <div className="brewMonsters">
+            <div className="brewMonsters__container">
                 {
                     currentUserMonsters.map(brewMonster => {
                         return <BrewMonsters key={brewMonster.id} brewMonster={brewMonster} />

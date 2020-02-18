@@ -21,7 +21,7 @@ export default (props) => {
         New Spell
         </button>
 
-        <div className="brewSpells">
+        <div className="brewSpells__container">
           {
             currentUserSpells.map(brewSpell => {
               

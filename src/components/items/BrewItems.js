@@ -3,9 +3,9 @@ import "./BrewItems.css"
 import { Link } from "react-router-dom"
 
 export default ({ item }) => (
-    <section className="items">
+    <section className="brewItems">
         <h3 className="itemsList__name">
-            <Link to={`/brewery/itemList/${item.id}`}>
+            <Link className="brewItems__link" to={`/brewery/itemList/${item.id}`}>
                 { item.name }
             </Link>
             

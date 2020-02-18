@@ -13,7 +13,7 @@ export default (props) => {
       <>
         
 
-        <div className="OpenMonsters">
+        <div className="openMonsters__container">
           {
             props.monsters.map( openMonster => {
               

@@ -1,13 +1,65 @@
-.brewSpells {
+.brewSpells__container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  color: gold;
+  
+}
+
+.spellForm__container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
+  width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+
 }
 
-.brewSpells {
-    flex-basis: 22%;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid goldenrod;
+.duration__caster{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+
 }
 
+.brewSpells__form{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+.spells__link {
+  color: gold;
+  text-decoration: none;
+  font-family: Bradley Hand, cursive;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.brewSpellsDetails{
+  color: gold;
+  text-decoration: none;
+  font-size: 25px;
+  max-width: 1000px;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.checkedCaster{
+  margin: 0 auto;
+  padding: 1em;
+  width: 500px;
+
+
+}

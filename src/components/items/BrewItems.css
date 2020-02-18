@@ -1,12 +1,36 @@
-.brewWeapons {
+.brewItems__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.brewWeapons {
+/* .brewItems {
     flex-basis: 22%;
     margin: 1em;
     padding: 1em;
     border: 1px solid goldenrod;
+} */
+
+.brewItems__link {
+  color: gold;
+  text-decoration: none;
+  font-family: Bradley Hand, cursive;
+  font-size: 2em;
+  font-weight: 300;
+
+
+}
+.brewItemsDetail{
+  color: gold;
+  
+  text-decoration: none;
+  /* font-style: italic; */
+  
+  font-size: x-large;
+  font-weight: 300;
+
+
 }

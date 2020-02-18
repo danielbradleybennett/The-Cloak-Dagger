@@ -11,7 +11,7 @@ export default (props) => {
 
   const monsterSlug = props.match.params.monsterSlug
 
-  const [monster, setMonster] = useState({actions:[]})
+  const [monster, setMonster] = useState({})
   
   useEffect(()=>{
     fetch(`https://api.open5e.com/monsters/${monsterSlug}`)
@@ -19,7 +19,17 @@ export default (props) => {
       .then(setMonster)
   }, [])
   
-
+  const genActions = (monster) => {
+    console.log(`monster.actions = ${monster.actions}`)
+    if (monster.actions){
+      return monster.actions.map(action => 
+        <>
+          <div>{action.desc}</div>
+            <div>{action.name}</div>
+        </>
+      )
+    }
+  }
 
   return (
     <section className="monster">
@@ -47,12 +57,7 @@ export default (props) => {
       <div className="monster__challenge_rating">{monster.challenge_rating}</div>
      
       <div className="monster__duration">
-        {monster.actions.map(action => 
-          <>
-            <div>{action.desc}</div>
-              <div>{action.name}</div>
-          </>
-        )}
+        {genActions(monster)}
       </div>
       
       <div className="monster__reactions">{monster.reactions}</div>

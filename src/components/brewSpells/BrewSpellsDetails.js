@@ -9,20 +9,12 @@ import { SpellCasterContext } from "./SpellCasterProvider"
 export default (props) => {
   const { brewSpells, deleteBrewSpells } = useContext(BrewSpellsContext)
   const {spellType} = useContext(SpellTypeContext)
-  const {spellSpellCaster} = useContext(SpellSpellCasterContext)
+  const {spellSpellCaster, deleteSpellSpellCaster} = useContext(SpellSpellCasterContext)
   const {spellCaster} = useContext(SpellCasterContext)
 
   const chosenSpellId = parseInt(props.match.params.brewSpellsId, 10)
   
-  // let arrayOfCasters = []
-  // const casters = casterIds.map(c => {
-  //   spellCaster.map(caster => {
-  //     if (c.caster === caster.id) {
-  //       arrayOfCasters.push(caster)
-  //     }
-  //   })
-  //   console.log(casters)
-  // }
+ 
 
 
   const spell = brewSpells.find(s => s.id === chosenSpellId) || {}
@@ -38,7 +30,7 @@ export default (props) => {
 
 
   return (
-    <section className="spell">
+    <section className="brewSpellsDetails">
       <h3 className="spell__name">{spell.name}</h3>
       <div className="spell__type">Type: {type.name}</div>
       <div className="spell__caster">Duration: {spell.duration}</div>
@@ -55,26 +47,30 @@ export default (props) => {
         
         </div> 
         
-        
-      
-      
-      
-
 
       <button onClick={() => {
-        props.history.push(`/brewery/spellList/edit/${spell.id}`)
-      }
+        props.history.push(`/brewery/spellList/edit/${spell.id}`)}
       
       }>Edit</button>
   
       <button onClick={
         () => {
           
-          deleteBrewSpells(spell)
-            .then(() => {
+          deleteBrewSpells(spell).then( () => {
+            const genPromises = () => {
+              return casters.map(caster =>
+              deleteSpellSpellCaster(caster)
+              ) 
+            } 
+              return Promise.all(genPromises())}).then(() => {
+            
+            
               props.history.push("/brewery/spellList")
-            })
-        }
+            }) 
+          }
+        
+
+
       }>Delete</button>
 
     

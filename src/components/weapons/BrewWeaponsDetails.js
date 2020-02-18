@@ -19,7 +19,7 @@ export default (props) => {
       <div className="brewWeaponsDetail__description">{weapon.desc}</div>
       <br></br>
       <div className="brewWeaponsDetail__rarity">Rarity: {weapon.rarity}</div>
-      <div className="brewWeaponsDetail__value">Value: {weapon.value}</div>
+      
       
       <button onClick={() => {
         props.history.push(`/brewery/weaponList/edit/${weapon.id}`)

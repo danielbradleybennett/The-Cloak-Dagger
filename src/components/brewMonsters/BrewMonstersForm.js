@@ -60,7 +60,7 @@ export default props => {
         charisma: brewMonster.charisma,
         desc: brewMonster.desc,
         actions: brewMonster.actions,
-        abilities: brewMonster.abilities,
+        // abilities: brewMonster.abilities,
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
         .then(() => props.history.push("/brewery/monsterList"))
@@ -82,7 +82,7 @@ export default props => {
         charisma: brewMonster.charisma,
         desc: brewMonster.desc,
         actions: brewMonster.actions,
-        abilities: brewMonster.abilities,
+        // abilities: brewMonster.abilities,
 
         userId: parseInt(localStorage.getItem("currentUserId")),
 
@@ -267,15 +267,15 @@ export default props => {
           </div>
         </fieldset>
 
-        <fieldset>
-          <div className="form-group">
+        <fieldset lassName="actions ">
+          <div className="form-group ">
             <label htmlFor="actions">Actions </label>
-            <input type="text" name="actions" className="form-control"
+            <textarea type="text" name="actions" className="form-control"
               proptype="varchar"
               placeholder="Actions"
               value={brewMonster.actions}
               onChange={handleControlledInputChange}>
-            </input>
+            </textarea>
           </div>
         </fieldset>
 

@@ -106,17 +106,7 @@ export default props => {
         </div>
       </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="armorValue">Value: </label>
-          <input type="text" name="value" required className="form-control"
-            proptype="varchar"
-            placeholder="Armor Value"
-            defaultValue={armor.value}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
+     
 
       <fieldset>
         <div className="form-group">

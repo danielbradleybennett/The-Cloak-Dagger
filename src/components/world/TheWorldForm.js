@@ -63,7 +63,8 @@ export default props => {
    
 <div className="theWorldContainer">
     <form className="theWorldTheWorld">
-      <h2 className="theWorldTheWorld__title">{editMode ? "Update TheWorld" : "Add TheWorld"}</h2>
+      <div className="world__form">
+      <h2 className="theWorldTheWorld__title">{editMode ? "Update The World" : "Add The World"}</h2>
       
       <fieldset>
         <div className="form-group">
@@ -78,9 +79,9 @@ export default props => {
       </fieldset>
 
       <fieldset>
-        <div className="form-group">
+        <div className="form-group worldDesc">
           <label htmlFor="theWorldDesc">World Description: </label>
-          <input type="text" name="desc" required className="form-control"
+          <textarea type="text" name="desc" required className="form-control world__desc"
             proptype="varchar"
             placeholder="World Description"
             defaultValue={world.desc}
@@ -98,8 +99,9 @@ export default props => {
           constructNewTheWorld()
         }}
         className="btn btn-primary">
-        {editMode ? "Save Updates" : "Save TheWorld"}
+        {editMode ? "Save Updates" : "Save The World"}
       </button>
+     </div> 
     </form>
     </div>
   )

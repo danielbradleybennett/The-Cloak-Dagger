@@ -108,19 +108,6 @@ export default props => {
           </div>
         </fieldset>
 
-
-        <fieldset>
-          <div className="form-group">
-            <label htmlFor="weaponValue">Value: </label>
-            <input type="text" name="value" required className="form-control"
-              proptype="varchar"
-              placeholder="Weapon Value"
-              defaultValue={brewWeapon.value}
-              onChange={handleControlledInputChange}
-            />
-          </div>
-        </fieldset>
-
         <fieldset>
           <div className="form-group">
             <label htmlFor="noteDesc">Description: </label>

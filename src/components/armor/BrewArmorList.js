@@ -21,7 +21,7 @@ export default (props) => {
         New Armor
         </button>
 
-        <div className="brewArmor">
+        <div className="brewArmor__container">
           {
             currentUserArmor.map(armor => {
               
