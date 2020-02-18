@@ -30,7 +30,7 @@ export default (props) => {
 
 
   return (
-    <section className="spell">
+    <section className="brewSpellsDetails">
       <h3 className="spell__name">{spell.name}</h3>
       <div className="spell__type">Type: {type.name}</div>
       <div className="spell__caster">Duration: {spell.duration}</div>

@@ -21,7 +21,7 @@ export default (props) => {
         New Item
         </button>
 
-        <div className="items">
+        <div className="brewItems__container">
           {
             currentUserItems.map(item => {
               

@@ -9,29 +9,16 @@ html {
   justify-content: space-between;
 }
 
-/* .worldList {
-    flex-basis: 22%;
-    margin: 1em;
-    padding: 1em;
-    /* border: 1px solid goldenrod;
-} */
-
 body {
   background-image: url("../Img/Tavern-Bards Tale.jpg");
-background-size: stretch; 
-min-height: 100%;
+  background-size: stretch; 
+  min-height: 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding: 0;
+  height: 1000px;
+  width: 1500px;
 
-background-repeat: no-repeat;
-
-margin: 0 auto;
-padding: 0;
-height: 1000px;
-    width: 1500px;
-
-
-/* background-position: 50% 50%;
-object-fit: cover;
-height: 100%;  */
 
  }
 
@@ -48,8 +35,6 @@ height: 100%;  */
 }
 
 .world__desc{
-  /* min-width: 500px;
-  min-height: 100px; */
   margin-bottom: 150px;
  
 

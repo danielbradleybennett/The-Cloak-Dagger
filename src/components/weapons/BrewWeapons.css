@@ -1,10 +1,13 @@
-.brewItems {
+.brewWeapons__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.brewItems {
+.brewWeapons {
     flex-basis: 22%;
     margin: 1em;
     padding: 1em;
@@ -14,21 +17,21 @@
 .brewWeapons__link{
   color: gold;  
   text-decoration: none;
-  /* font-style: italic; */
   font-family: Bradley Hand, cursive;
-  font-size: x-large;
+  font-size: 2em;
   font-weight: 300;
 
 }
 
 .brewWeaponsDetail{
   color: gold;
-  
   text-decoration: none;
-  /* font-style: italic; */
+  font-size: 25px;
+  max-width: 1000px;
   
-  font-size: x-large;
-  font-weight: 300;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
 
 
 }

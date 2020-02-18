@@ -17,20 +17,14 @@
 }
     
 .openMonsters__container {
-    /* background-size: stretch;  */
-    /* min-height: 100%; */
+   
     display: flex;
     flex-direction: row;
     background-repeat: no-repeat;
-    flex-wrap: wrap;
-    /* height: auto 100%; */
-    
+    flex-wrap: wrap; 
     margin: 0 auto;
     padding: 0;
-    height: 1000px; 
-    
-    /* position: fixed; */
-    
+    height: 1000px;     
     background-position: 50% 50%;
     object-fit: cover;
     height: 100%; 
@@ -47,7 +41,6 @@
   color: gold;
   
   text-decoration: none;
-  /* font-style: italic; */
   font-family: Bradley Hand, cursive;
   font-size: x-large;
   font-weight: 300;

@@ -13,7 +13,7 @@ export default (props) => {
       <>
         
 
-        <div className="OpenSpells">
+        <div className="openSpells__container">
           {
             props.spells.map( openSpell => {
               

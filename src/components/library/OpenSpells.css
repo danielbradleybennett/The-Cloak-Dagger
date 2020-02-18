@@ -1,15 +1,21 @@
-.OpenSpells {
+.openSpells__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  
+    flex-direction: row;
+    background-repeat: no-repeat;
+    
+    margin: 0 auto;
+    padding: 0;
+    height: 1000px;     
+    background-position: 50% 50%;
+    object-fit: cover;
+    height: 100%; 
 }
 
-/* .OpenSpells {
-    flex-basis: 22%;
-    margin: 1em;
-    padding: 1em;
-    border: 1px solid goldenrod;
-} */
+
 
 .spell {
   color: gold;
