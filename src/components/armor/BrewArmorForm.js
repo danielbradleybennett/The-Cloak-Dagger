@@ -66,8 +66,8 @@ export default props => {
 
   return (
    
-<div className="brewArmorContainer">
-    <form className="brewArmor__Form">
+<div className="brewArmor__container">
+    <form className="brewArmor__form">
       <h2 className="brewArmor__title">{editMode ? "Update Armor" : "Add Armor"}</h2>
       
       <fieldset>

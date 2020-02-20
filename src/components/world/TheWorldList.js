@@ -20,7 +20,7 @@ export default (props) => {
         New World
         </button>
 
-        <div className="worldList">
+        <div className="world__container">
           {
             currentUserWorld.map(world => {
               

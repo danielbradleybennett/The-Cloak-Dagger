@@ -6,6 +6,11 @@
   margin: 0 auto;
   padding: 0;
 }
+.brewItems__form{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+}
 
 /* .brewItems {
     flex-basis: 22%;

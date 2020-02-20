@@ -1,14 +1,28 @@
+  .world__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* flex-direction: row; */
+  margin: 0 auto;
+  padding: 0;
+} 
+.world__form {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+
+} 
+
 html {
   background-color: rgb(24, 4, 4);
-
 }
-
 .worldList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+/* background pic */
 body {
   background-image: url("../Img/Tavern-Bards Tale.jpg");
   background-size: stretch; 
@@ -18,49 +32,32 @@ body {
   padding: 0;
   height: 1000px;
   width: 1500px;
-
-
  }
 
 .theWorld__link{
-
-  color: gold;
-   
+   color: gold; 
    text-decoration: none;
-   /* font-style: italic; */
    font-family: Bradley Hand, cursive;
-   font-size: x-large;
+   font-size: 2em;
    font-weight: 300;
 
 }
-
-.world__desc{
-  margin-bottom: 150px;
- 
-
+.world__title{
+  width: 10px;
+  display:inline-block;
 
 }
 
-.theWorldTheWorld{
-  display: flex;
-  flex-direction: column;
+  .world__desc {
+   width: 1500px;
   
-}
-
+  }
 .theWorldDetail{
   color: gold;
-  
   text-decoration: none;
-  /* font-style: italic; */
   font-family: Bradley Hand, cursive;
   font-size: x-large;
   font-weight: 300;
 
 }
 
-.theWorldDetail__description{
-  word-break: normal;
-  max-width: 300px;
-  white-space: pre-wrap;
-
-}

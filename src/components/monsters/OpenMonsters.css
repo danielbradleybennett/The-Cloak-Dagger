@@ -12,7 +12,7 @@
     width: 300px;
     padding: 1em;
     color: gold;
-    /* border: 1px solid goldenrod; */
+    
     
 }
     
@@ -23,13 +23,7 @@
     background-repeat: no-repeat;
     flex-wrap: wrap; 
     margin: 0 auto;
-    padding: 0;
-    height: 1000px;     
-    background-position: 50% 50%;
-    object-fit: cover;
-    height: 100%; 
-    
-     
+    padding: 0;  
  } 
 
 .monster {

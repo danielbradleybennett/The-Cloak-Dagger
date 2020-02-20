@@ -1,3 +1,4 @@
+/* 2-15 centers form */
 .brewArmor__container {
   display: flex;
   flex-wrap: wrap;
@@ -5,6 +6,12 @@
   flex-direction: row;
   margin: 0 auto;
   padding: 0;
+}
+
+.brewArmor__form{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .brewArmor {
@@ -23,7 +30,7 @@
 
 
 }
-.brewArmorDetail{
+.brewArmor__detail{
   color: gold;
   text-decoration: none;
   font-family: Bradley Hand, cursive;
@@ -32,7 +39,9 @@
   display: inline-block;
   margin: 0 auto;
   text-align: left;
-
-
-
+}
+.brewArmor__description{
+  word-break: normal;
+  max-width: 300px;
+  white-space: pre-wrap;
 }

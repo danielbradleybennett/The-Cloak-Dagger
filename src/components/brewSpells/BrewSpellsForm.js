@@ -142,7 +142,7 @@ export default props => {
   //console.log(checkedCaster)
   return (
 
-    <div className="brewSpells__container">
+    <div className="brewSpells">
       <form className="brewSpells__form">
         <h2 className="brewSpells__title">{editMode ? "Update Spell" : "Add Spell"}</h2>
 
