@@ -12,7 +12,7 @@ export default (props) => {
 
 
   return (
-    <section className="brewWeaponsDetail">
+    <section className="brewWeapons__detail">
       <h3 className="brewWeaponsDetail__name">{weapon.name}</h3>
       <div className="brewWeaponsDetail__type">Type: {weapon.type}</div>
       <div className="brewWeaponsDetail__damage">Damage: {weapon.damage}</div>

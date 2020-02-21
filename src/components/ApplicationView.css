@@ -1,12 +1,31 @@
 .Button{
   display: flex !important;
-   
-  /* justify-content: space-evenly; */
-
+  
+  
 }
 
 .note_world {
   display: flex !important;
-  
 }
+
+Button {
+  background-color: lightgrey !important;
+
+}
+.button__spells{
+  margin-left: 5px;
+}
+.button__monsters{
+  margin-left: 5px;
+}
+.button__weapons{
+  margin-left: 5px;
+}
+.button__items{
+  margin-left: 5px;
+}
+.button__armor{
+  margin-left: 5px;
+}
+
 

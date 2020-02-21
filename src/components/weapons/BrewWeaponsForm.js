@@ -67,7 +67,7 @@ export default props => {
 
   return (
 
-    <div className="brewWeaponsContainer">
+    <div className="brewWeapons__container">
       <form className="brewWeapons__form">
         <h2 className="brewWeapons__title">{editMode ? "Update Weapons" : "Add Weapons"}</h2>
 

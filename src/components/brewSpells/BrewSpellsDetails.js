@@ -30,13 +30,13 @@ export default (props) => {
 
 
   return (
-    <section className="brewSpellsDetails">
-      <h3 className="spell__name">{spell.name}</h3>
-      <div className="spell__type">Type: {type.name}</div>
-      <div className="spell__caster">Duration: {spell.duration}</div>
-      <div className="spell__range">Range:{spell.range}</div>
+    <section className="brewSpells__details">
+      <h3 className="brewSpells__name">{spell.name}</h3>
+      <div className="brewSpells__type">Type: {type.name}</div>
+      <div className="brewSpells__caster">Duration: {spell.duration}</div>
+      <div className="brewSpells__range">Range:{spell.range}</div>
       <br></br>
-      <div className="spell__description">{spell.description}</div>
+      <div className="brewSpells__description">{spell.description}</div>
       <div>
         {casters.map(n => 
           <>

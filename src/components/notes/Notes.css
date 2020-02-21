@@ -6,19 +6,15 @@
   margin: 0 auto;
   padding: 0;
 }
-
-.notes {
-    flex-basis: 22%;
-    margin: 1em;
-    padding: 1em;
-    
+.notes__form {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .brewNotes__link{
   color: gold;
-   
    text-decoration: none;
-  
    font-family: Bradley Hand, cursive;
    font-size: 2em;
    font-weight: 300;
@@ -29,7 +25,6 @@
 .notesDetail{
   color: gold; 
   text-decoration: none;
-  /* font-style: italic; */
   font-family: Bradley Hand, cursive;
   font-size: x-large;
   font-weight: 300;

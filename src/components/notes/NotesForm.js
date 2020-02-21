@@ -61,8 +61,8 @@ export default props => {
 
   return (
    
-<div className="NotesContainer">
-    <form className="NotesNotes">
+<div className="notes__container">
+    <form className="notes__form">
       <h2 className="NotesNotes__title">{editMode ? "Update Notes" : "Add Notes"}</h2>
       
       <fieldset>

@@ -94,8 +94,8 @@ export default props => {
 
   return (
 
-    <div className="BrewMonstersContainer">
-      <form className="BrewMonstersBrewMonsters">
+    <div className="brewMonsters__container">
+      <form className="brewMonsters__form">
         <h2 className="BrewMonstersBrewMonsters__title">{editMode ? "Update Monster" : "Create Monster"}</h2>
 
         <fieldset>

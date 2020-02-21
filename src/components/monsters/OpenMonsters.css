@@ -12,10 +12,10 @@
     width: 300px;
     padding: 1em;
     color: gold;
-    /* border: 1px solid goldenrod; */
+    
     
 }
-    
+/* overflow, use for other sections */
 .openMonsters__container {
    
     display: flex;
@@ -23,13 +23,9 @@
     background-repeat: no-repeat;
     flex-wrap: wrap; 
     margin: 0 auto;
-    padding: 0;
-    height: 1000px;     
-    background-position: 50% 50%;
-    object-fit: cover;
-    height: 100%; 
-    
-     
+    padding: 0;  
+    max-height: 400px;
+    overflow-y: scroll;
  } 
 
 .monster {
