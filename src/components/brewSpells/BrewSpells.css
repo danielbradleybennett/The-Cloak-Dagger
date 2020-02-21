@@ -54,14 +54,14 @@
   color: gold;
   text-decoration: none;
   font-family: Bradley Hand, cursive;
-  font-size: 2em;
+  font-size: 50px;
   font-weight: 300;
 }
 
 .brewSpells__details{
   color: gold;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 10px;
   max-width: 1000px;
   display: inline-block;
   margin: 0 auto;
@@ -77,4 +77,11 @@
   word-break: normal;
   max-width: 300px;
   white-space: pre-wrap;
+}
+
+.spell--description{
+  min-height: 200px;
+  overflow-y: scroll;
+
+
 }

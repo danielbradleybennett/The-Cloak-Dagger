@@ -142,7 +142,7 @@ export default props => {
   //console.log(checkedCaster)
   return (
 
-    <div className="brewSpells">
+    <div className="brewSpells__container">
       <form className="brewSpells__form">
         <h2 className="brewSpells__title">{editMode ? "Update Spell" : "Add Spell"}</h2>
 
@@ -160,7 +160,7 @@ export default props => {
           </div>
           <div className="form-group">
             <label htmlFor="spellType">Level: </label>
-            <input type="level" name="level" className="form-control"
+            <input type="level" name="level" required className="form-control"
               proptype="integer"
               placeholder="Level"
               value={brewSpell.level}
@@ -174,7 +174,7 @@ export default props => {
         <div className="spellForm__container">
           <div className="form-group">
             <label htmlFor="castingTime">Casting Time: </label>
-            <input type="text" name="castingTime" className="form-control"
+            <input type="text" name="castingTime" required className="form-control"
               proptype="varchar"
               placeholder="Casting Time"
               value={brewSpell.castingTime}
@@ -183,7 +183,7 @@ export default props => {
           </div>
           <div className="form-group">
             <label htmlFor="spellRange">Range: </label>
-            <input type="text" name="range" className="form-control"
+            <input type="text" name="range" required className="form-control"
               proptype="varchar"
               placeholder="Spell Range"
               value={brewSpell.range}
@@ -197,7 +197,7 @@ export default props => {
         <div className="duration__caster">
           <div className="form-group">
             <label htmlFor="spellDuration">Duration: </label>
-            <input type="text" name="duration" className="form-control"
+            <input type="text" name="duration" required className="form-control"
               proptype="varchar"
               placeholder="Spell Duration"
               value={brewSpell.duration}
@@ -211,8 +211,10 @@ export default props => {
               name="typeId"
               ref={type}
               id="spellType"
+              required
               onChange={handleControlledInputChange}
               className="form-control">
+              
 
               <option value="0">Select a Spell Type</option>
               {spellType.map(st => (
@@ -241,7 +243,7 @@ export default props => {
 
         <div>
           <label htmlFor="spellDesc">Description: </label>
-          <textarea type="text" name="description" required className="form-control"
+          <textarea type="text" name="description" required className="form-control spell--description"
             proptype="varchar"
             placeholder="Spell Description"
             defaultValue={brewSpell.description}

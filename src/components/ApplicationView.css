@@ -8,8 +8,8 @@
   display: flex !important;
 }
 
-button {
-  background-color: purple;
+Button {
+  background-color: lightgrey !important;
 
 }
 .button__spells{

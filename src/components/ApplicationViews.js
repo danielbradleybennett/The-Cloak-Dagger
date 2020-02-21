@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 import "./ApplicationView.css"
 import { Route } from "react-router-dom"
 import { BrewSpellsProvider } from "./brewSpells/BrewSpellsDataProvider"
@@ -84,9 +85,9 @@ export default (props) => {
                                                     <section className="Button">
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__spells" onClick={() => props.history.push("/brewery/spellList")}>
+                                                                <Button className="button__spells btn btn-light btn-sm" onClick={() => props.history.push("/brewery/spellList")}>
                                                                     Spells
-                                                        </button>
+                                                        </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">

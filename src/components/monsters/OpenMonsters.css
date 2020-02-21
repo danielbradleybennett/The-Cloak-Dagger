@@ -15,7 +15,7 @@
     
     
 }
-    
+/* overflow, use for other sections */
 .openMonsters__container {
    
     display: flex;
@@ -24,6 +24,8 @@
     flex-wrap: wrap; 
     margin: 0 auto;
     padding: 0;  
+    max-height: 400px;
+    overflow-y: scroll;
  } 
 
 .monster {
