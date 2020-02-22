@@ -15,9 +15,9 @@ export default (props) => {
     <section className="brewArmor__detail">
       <h3 className="brewArmor__name">{armor.name}</h3>
       <div className="brewArmor__type">{armor.type}</div>
-      <div className="brewArmor__description">{armor.desc}</div>
-      <br></br>
       <div className="brewArmorDetail__rarity">{armor.rarity}</div>
+      <div className="brewArmor__description">{armor.desc}</div>
+     
       
       
       <button onClick={() => {

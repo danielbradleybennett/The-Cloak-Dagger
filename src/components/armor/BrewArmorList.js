@@ -16,12 +16,15 @@ export default (props) => {
     return (
 
       <>
-        <button onClick={
+        
+        <button className="newArmor__button btn btn-light btn-sm" onClick={
         () => props.history.push("/brewery/armorList/create")}>
         New Armor
         </button>
-
+       
+        
         <div className="brewArmor__container">
+        
           {
             currentUserArmor.map(armor => {
               

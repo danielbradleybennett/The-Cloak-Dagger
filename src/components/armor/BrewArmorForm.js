@@ -68,9 +68,8 @@ export default props => {
    
 <div className="brewArmor__container">
     <form className="brewArmor__form">
-      <h2 className="brewArmor__title">{editMode ? "Update Armor" : "Add Armor"}</h2>
-      
-      <fieldset>
+      <br></br>
+      <h2 className="brewArmor__title">{editMode ? "Update Armor" : "Brew Armor"}</h2>
         <div className="form-group">
           <label htmlFor="name">Name: </label>
           <input type="text" name="name" required autoFocus className="form-control"
@@ -80,9 +79,7 @@ export default props => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-
-      <fieldset>
+    
         <div className="form-group">
           <label htmlFor="armorType">Type: </label>
           <input type="text" name="type" required className="form-control"
@@ -92,23 +89,7 @@ export default props => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="armorDesc">Description: </label>
-          <textarea type="text" name="desc" required className="form-control"
-            proptype="varchar"
-            placeholder="Armor Description"
-            defaultValue={armor.desc}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
-
-     
-
-      <fieldset>
         <div className="form-group">
           <label htmlFor="armorRarity">Rarity: </label>
           <input type="text" name="rarity" required className="form-control"
@@ -118,9 +99,19 @@ export default props => {
             onChange={handleControlledInputChange}
           />
         </div>
-      </fieldset>
-
-
+     
+        <div className="form-group">
+          <label htmlFor="armorDesc">Description: </label>
+          <textarea type="text" name="desc" required className="form-control armor--description"
+            proptype="varchar"
+            placeholder="Armor Description"
+            defaultValue={armor.desc}
+            onChange={handleControlledInputChange}
+          />
+        </div>
+      
+        
+     
       <button type="submit"
         onClick={evt => {
           evt.preventDefault()

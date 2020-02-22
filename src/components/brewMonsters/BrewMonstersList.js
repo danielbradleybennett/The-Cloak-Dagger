@@ -13,10 +13,11 @@ export default (props) => {
 
     return (
         <>
-            <button onClick={
+
+            <button className="newMonster__button btn btn-light btn-sm" onClick={
                 () => props.history.push("/brewery/monsterList/create")}>
                 New Monster
-        </button>
+            </button>
 
             <div className="brewMonsters__container">
                 {

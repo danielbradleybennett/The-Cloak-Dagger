@@ -67,14 +67,14 @@ export default (props) => {
                                                   <section className="note_world">
                                                     <Route path="/vyasa">
                                                         <div>
-                                                            <button onClick={() => props.history.push("/vyasa/notesList")}>
+                                                            <Button className="button__notes btn btn-light btn-sm" onClick={() => props.history.push("/vyasa/notesList")}>
                                                                 Notes
-                                                        </button>
+                                                            </Button>
                                                         </div>
                                                     </Route>
                                                     <Route path="/vyasa">
                                                         <div>
-                                                            <button onClick={() => props.history.push("/vyasa/worldList")}>
+                                                            <button className="button__world btn btn-light btn-sm" onClick={() => props.history.push("/vyasa/worldList")}>
                                                                 The World
                                                         </button>
                                                         </div>
@@ -87,35 +87,35 @@ export default (props) => {
                                                             <div>
                                                                 <Button className="button__spells btn btn-light btn-sm" onClick={() => props.history.push("/brewery/spellList")}>
                                                                     Spells
-                                                        </Button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__monsters" onClick={() => props.history.push("/brewery/monsterList")}>
+                                                                <Button className="button__monsters btn btn-light btn-sm" onClick={() => props.history.push("/brewery/monsterList")}>
                                                                     Monsters
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__weapons" onClick={() => props.history.push("/brewery/weaponList")}>
+                                                                <Button className="button__weapons btn btn-light btn-sm" onClick={() => props.history.push("/brewery/weaponList")}>
                                                                     Weapons
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__items" onClick={() => props.history.push("/brewery/itemList")}>
+                                                                <Button className="button__items btn btn-light btn-sm" onClick={() => props.history.push("/brewery/itemList")}>
                                                                     Items
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__armor" onClick={() => props.history.push("/brewery/armorList")}>
+                                                                <Button className="button__armor btn btn-light btn-sm" onClick={() => props.history.push("/brewery/armorList")}>
                                                                     Armor
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                     </section>

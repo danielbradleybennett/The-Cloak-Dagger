@@ -13,8 +13,8 @@ export default (props) => {
 
   return (
     <section className="theWorldDetail">
-      <h3 className="theWorldDetail__name">{world.title}</h3>
-      <div className="theWorldDetail__description">{world.desc}</div>
+      <h3 className="world__name">{world.title}</h3>
+      <div className="world__description">{world.desc}</div>
       
       <button onClick={() => {
         props.history.push(`/vyasa/worldList/edit/${world.id}`)

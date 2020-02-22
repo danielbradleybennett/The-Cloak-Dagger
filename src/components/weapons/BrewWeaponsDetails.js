@@ -13,12 +13,12 @@ export default (props) => {
 
   return (
     <section className="brewWeapons__detail">
-      <h3 className="brewWeaponsDetail__name">{weapon.name}</h3>
-      <div className="brewWeaponsDetail__type">Type: {weapon.type}</div>
-      <div className="brewWeaponsDetail__damage">Damage: {weapon.damage}</div>
-      <div className="brewWeaponsDetail__description">{weapon.desc}</div>
+      <h3 className="brewWeapons__name">{weapon.name}</h3>
+      <div className="brewWeapons__type">Type: {weapon.type}</div>
+      <div className="brewWeapons__rarity">Rarity: {weapon.rarity}</div>
+      <div className="brewWeapons__damage">Damage: {weapon.damage}</div>
+      <div className="brewWeapons__description">{weapon.desc}</div>
       <br></br>
-      <div className="brewWeaponsDetail__rarity">Rarity: {weapon.rarity}</div>
       
       
       <button onClick={() => {

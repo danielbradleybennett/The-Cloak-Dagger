@@ -63,7 +63,7 @@ export default props => {
 
     <div className="world__container">
       <form className="world__form">
-        <h2 className="theWorld__title">{editMode ? "Update The World" : "Add The World"}</h2>
+        <h2 className="theWorld__title">{editMode ? "Update The World" : "The World"}</h2>
 
         
           <div className="form-group">
@@ -80,7 +80,7 @@ export default props => {
         
           <div className="form-group">
             <label htmlFor="theWorldDesc">World Description: </label>
-            <textarea rows="100" type="text" name="desc" required autoFocus className="form-control world__desc"
+            <textarea type="text" name="desc" required autoFocus className="form-control world--description"
               proptype="varchar"
               placeholder="World Description"
               defaultValue={world.desc}

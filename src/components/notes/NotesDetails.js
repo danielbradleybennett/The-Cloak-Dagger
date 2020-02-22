@@ -12,9 +12,9 @@ export default (props) => {
 
 
   return (
-    <section className="notesDetail">
-      <h3 className="notesDetail__name">{note.name}</h3>
-      <div className="notesDetail__description">{note.desc}</div>
+    <section className="notes__detail">
+      <h3 className="notes__name">{note.name}</h3>
+      <div className="notes__description">{note.desc}</div>
       
       <button onClick={() => {
         props.history.push(`/vyasa/notesList/edit/${note.id}`)

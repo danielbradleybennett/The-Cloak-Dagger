@@ -8,7 +8,7 @@ export default (props) => {
         <ul className="navbar ">
             
             <li className="navbar__item">
-                <Link className="navbar__link" to="/library">The Library</Link>
+                <Link className="navbar__link font-weight-bold" to="/library">The Library</Link>
             </li>
             <li className="navbar__item">
                 <Link className="navbar__link" to="/brewery">The Brewery</Link>

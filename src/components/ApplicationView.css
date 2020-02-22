@@ -1,7 +1,6 @@
 .Button{
   display: flex !important;
   
-  
 }
 
 .note_world {
@@ -9,7 +8,8 @@
 }
 
 Button {
-  background-color: lightgrey !important;
+  background-color: darkgrey !important;
+  
 
 }
 .button__spells{
