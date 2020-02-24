@@ -28,15 +28,16 @@ export default (props) => {
       <div className="brewMonster__wisdom">Wisdom: {monster.wisdom}</div>
       <div className="brewMonster__charisma">Charisma: {monster.charisma}</div>
       <br></br>
+      <div className="brewMonster__abilities">Abilities: {monster.abilities}</div>
       <div className="brewMonster__actions">Actions: {monster.actions}</div>
       
 
-      
+      <br></br>
       <button onClick={() => {
         props.history.push(`/brewery/monsterList/edit/${monster.id}`)
       }
       }>Edit</button>
-
+      
       <button onClick={
         () => {
 

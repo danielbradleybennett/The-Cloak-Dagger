@@ -17,11 +17,12 @@
   color: gold;
 
 } 
-/* html {
+html {
   background-color: rgb(24, 4, 4);
-} */
+}
 .brewWorld {
   flex-basis: 30%;
+  padding: 1em;
 }
 
 /* background pic */
@@ -49,11 +50,6 @@ body {
   color: green;
 
 }
-/* .world__title{
-  width: 10px;
-  display:inline-block;
-
-} */
 
   .world__description {
     word-break: normal;
@@ -63,10 +59,12 @@ body {
   }
 .theWorldDetail{
   color: gold;
-  text-decoration: none;
-  font-family: Bradley Hand, cursive;
   font-size: 1em;
-  font-weight: 300;
+  margin: 0 auto;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 40px;
 }
 .world--description{
   min-height: 200px;

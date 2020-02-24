@@ -1,36 +1,29 @@
 /* 2-15 centers form */
 .brewArmor__container {
-  /* color: gold;
+ 
+  color: gold;
   display: flex;
   flex-direction: row;
   background-repeat: no-repeat;
   flex-wrap: wrap; 
   margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 10px;
   padding: 0;  
   max-height: 400px;
   overflow-y: scroll;
-  justify-content: space-evenly; */
-
-  display: flex;
-  flex-direction: row;
-  background-repeat: no-repeat;
-  flex-wrap: wrap; 
-  margin-left: 10px;
-  margin-top: 10px; 
-  max-height: 400px;
-  overflow-y: scroll;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .brewArmor__form{
   display: inline-block;
   margin: 0 auto;
   text-align: left;
+  color: gold;
 }
 
 .brewArmor {
     flex-basis: 30%;  
+    padding: 1em;
 }
 
 .brewArmor__link{
@@ -64,5 +57,9 @@
   min-height: 200px;
   overflow-y: scroll;
   min-width: 500px;
+}
+.newArmor__button{
+  margin-top: 5px;
+
 }
 

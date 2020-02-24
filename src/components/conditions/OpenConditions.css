@@ -1,4 +1,4 @@
-.openSpells__container {
+.openConditions__container {
   display: flex;
   flex-direction: row;
   background-repeat: no-repeat;
@@ -10,18 +10,18 @@
 
 }
 
-.OpenSpells{
+.OpenConditions{
   flex-basis: 30%;
     padding: 1em;
 }
 
 
-.spell {
+.condition {
   color: gold;
 
 }
 
-.openSpells__link {
+.openConditions__link {
   color: gold;
   text-decoration: none;
   /* font-style: italic; */

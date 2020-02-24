@@ -15,9 +15,11 @@
   display: inline-block;
   margin: 0 auto;
   text-align: left;
+  color: gold;
 }
 .brewWeapons {
-    flex-basis: 30%;    
+    flex-basis: 30%; 
+    padding: 1em;   
 }
 .brewWeapons__link{
   color: gold;  
@@ -51,4 +53,7 @@
   min-height: 200px;
   overflow-y: scroll;
   min-width: 500px;
+}
+.newWeapon__button{
+  margin-top: 5px;
 }

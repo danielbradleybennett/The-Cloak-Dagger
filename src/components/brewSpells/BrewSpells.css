@@ -19,15 +19,8 @@
 
 .brewSpells{
   flex-basis: 30%;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: scroll;
-  flex-basis: 25%;
-  width: 300px;
-  color: gold; */
-
-
+  padding: 1em;
+  
 }
 
 .spellForm__container{
@@ -97,6 +90,7 @@
 .spell--description{
   min-height: 200px;
   overflow-y: scroll;
-
-
+}
+.newSpell__button{
+ margin-top: 5px;
 }

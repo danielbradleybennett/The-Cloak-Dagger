@@ -12,23 +12,20 @@
   max-height: 400px;
   overflow-y: scroll;
   justify-content: space-evenly;
-  
+ 
 }
 
 .brewMonsters__form{
   display: inline-block;
   margin: 0 auto;
   text-align: left;
-
+  color: gold;
 }
 
 .brewMonsters {
-    flex-basis: 30%;
-    
-    
-    
+    flex-basis: 30%;    
+    padding: 1em;
 }
-
 
 .brewMonsters__link{
   color: gold;
@@ -59,6 +56,23 @@
   overflow-y: scroll;
   max-height: 400px;
   color: gold;
-  
+}
+.brewMonster__abilities{
+  word-break: normal;
+  max-width: 1000px;
+  white-space: pre-wrap;
+}
+.brewMonster--actions{
+  min-height: 200px;
+  overflow-y: scroll;
+  min-width: 500px;
+}
+.brewMonster--abilities{
+  min-height: 200px;
+  overflow-y: scroll;
+  min-width: 500px;
+}
+.newMonster__button{
+  margin-top: 5px;
 
 }

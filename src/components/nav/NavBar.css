@@ -1,25 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp&display=swap');
 
 .navbar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-  
 }
 
-/* .navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
-    text-decoration-style: none;
-
-
-    
-} */
 .navbar__link {
     color: rgb(155, 152, 152);
     text-decoration: none;
-    font-family: Bradley Hand, cursive;
+    font-family: "Medievalsharp";
     font-size: 40px;
-    font-weight: 1500;
+    font-weight: 1500 !important;
 
 }
 .navbar__link:hover{

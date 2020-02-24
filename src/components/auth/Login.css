@@ -68,6 +68,10 @@ fieldset {
     font-family: Bradley Hand, cursive;
     font-size: 100px;
     font-weight: 300;
+    margin-left: -35vw;
+   
+   
+    
 }
 
 .form--login {
@@ -81,11 +85,13 @@ fieldset {
     background-repeat: no-repeat;
 }
 
-/* section{ */
+.emailAddress{
+    color: white;
+}
+.loginPassword{
+    color: white;
+}
+.sign__in{
+    color: red;
 
-
-/* background-position: 50% 50%;
-object-fit: cover;
-height: 100%;  */
-
-/* } */
+}

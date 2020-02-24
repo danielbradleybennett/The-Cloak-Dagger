@@ -40,6 +40,7 @@
 
 .brewNotes{
   flex-basis: 30%;
+  padding: 1em;
 }
 
 .notes__description{

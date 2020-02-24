@@ -58,7 +58,7 @@ export default props => {
         intelligence: brewMonster.intelligence,
         wisdom: brewMonster.wisdom,
         charisma: brewMonster.charisma,
-        desc: brewMonster.desc,
+        desc: brewMonster.abilities,
         actions: brewMonster.actions,
         // abilities: brewMonster.abilities,
         userId: parseInt(localStorage.getItem("currentUserId")),
@@ -80,7 +80,7 @@ export default props => {
         intelligence: brewMonster.intelligence,
         wisdom: brewMonster.wisdom,
         charisma: brewMonster.charisma,
-        desc: brewMonster.desc,
+        desc: brewMonster.abilities,
         actions: brewMonster.actions,
         // abilities: brewMonster.abilities,
 
@@ -258,13 +258,13 @@ export default props => {
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="desc">Description </label>
-            <input type="text" name="desc" className="form-control"
+            <label htmlFor="abilities">Abilities</label>
+            <textarea type="text" name="abilities" className="form-control brewMonster--abilities"
               proptype="varchar"
-              placeholder="Description"
-              value={brewMonster.description}
+              placeholder="Abilities"
+              value={brewMonster.abilities}
               onChange={handleControlledInputChange}>
-            </input>
+            </textarea>
           </div>
         </fieldset>
 

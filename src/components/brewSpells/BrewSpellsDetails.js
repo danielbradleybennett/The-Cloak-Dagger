@@ -47,7 +47,7 @@ export default (props) => {
         
         </div> 
         
-
+      <br></br>
       <button onClick={() => {
         props.history.push(`/brewery/spellList/edit/${spell.id}`)}
       

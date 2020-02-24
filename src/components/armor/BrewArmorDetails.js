@@ -19,7 +19,7 @@ export default (props) => {
       <div className="brewArmor__description">{armor.desc}</div>
      
       
-      
+      <br></br>
       <button onClick={() => {
         props.history.push(`/brewery/armorList/edit/${armor.id}`)
       }

@@ -66,7 +66,7 @@ export default props => {
    
 <div className="brewItems__container">
     <form className="brewItems__form">
-      <h2 className="brewItems__title">{editMode ? "Update Items" : "Add Items"}</h2>
+      <h2 className="brewItems__title">{editMode ? "Update Items" : "Brew Item"}</h2>
       
       <fieldset>
         <div className="form-group">
@@ -91,23 +91,11 @@ export default props => {
           />
         </div>
       </fieldset>
-{/*  */}
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="item_value">Value: </label>
-          <input type="text" name="value" required className="form-control"
-            proptype="varchar"
-            placeholder="Value"
-            defaultValue={brewItem.value}
-            onChange={handleControlledInputChange}
-          />
-        </div>
-      </fieldset>
 
       <fieldset>
         <div className="form-group">
           <label htmlFor="itemRarity">Rarity: </label>
-          <input type="text" name="rarity" required className="form-control"
+          <input type="text" name="rarity" required className="form-control col-4"
             proptype="varchar"
             placeholder="Rarity"
             defaultValue={brewItem.rarity}
@@ -123,7 +111,7 @@ export default props => {
           constructNewBrewItems()
         }}
         className="btn btn-primary">
-        {editMode ? "Save Updates" : "Save Items"}
+        {editMode ? "Update Item" : "Save Item"}
       </button>
     </form>
     </div>

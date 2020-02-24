@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { BrewSpellsContext } from "./BrewSpellsDataProvider"
 import BrewSpells from "./BrewSpells"
 import "./BrewSpells.css"
-import {Button} from "react-bootstrap"
+
 
 
 export default (props) => {
@@ -17,10 +17,10 @@ export default (props) => {
     return (
 
       <>
-        <Button className="newSpell__button btn btn-light btn-sm" onClick={
+        <button className="newSpell__button btn btn-light btn-sm" onClick={
         () => props.history.push("/brewery/spellList/create")}>
         New Spell
-        </Button>
+        </button>
 
         <div className="brewSpells__container">
           {
