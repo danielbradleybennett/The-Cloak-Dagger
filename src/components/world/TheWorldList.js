@@ -15,8 +15,8 @@ export default (props) => {
     return (
 
       <>
-        <button onClick={
-        () => props.history.push("/vyasa/worldList/create")}>
+        <button className="world--button" onClick={
+        () => props.history.push("/lore/worldList/create")}>
         New World
         </button>
 

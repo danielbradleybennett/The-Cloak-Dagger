@@ -45,7 +45,7 @@ export default props => {
 
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
-        .then(() => props.history.push("/vyasa/worldList"))
+        .then(() => props.history.push("/lore/worldList"))
     } else {
       addTheWorld({
         id: world.id,
@@ -54,7 +54,7 @@ export default props => {
 
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
-        .then(() => props.history.push("/vyasa/worldList"))
+        .then(() => props.history.push("/lore/worldList"))
     }
 
   }

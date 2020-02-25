@@ -15,7 +15,7 @@ export default (props) => {
                 <Link className="navbar__link font-weight-bold" to="/brewery">The Brewery</Link>
             </li>
             <li className="navbar__item">
-                <Link className="navbar__link font-weight-bold" to="/vyasa">Vyasa</Link>
+                <Link className="navbar__link font-weight-bold" to="/lore">Lore</Link>
             </li>
 
             {

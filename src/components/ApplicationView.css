@@ -10,9 +10,6 @@
 Button {
   background-color: black !important;
   color: white !important;
-  
-  
-  
 
 }
 .button__spells{
@@ -28,6 +25,12 @@ Button {
   margin-left: 5px;
 }
 .button__armor{
+  margin-left: 5px;
+}
+.button__world{
+  margin-left: 5px;
+}
+.button__notes{
   margin-left: 5px;
 }
 

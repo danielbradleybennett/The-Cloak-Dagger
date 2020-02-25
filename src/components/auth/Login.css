@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp&display=swap');
 
 
 
@@ -37,24 +37,17 @@ fieldset {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    /* color: #495057; */
-    /* background-color: #fff; */
     background-clip: padding-box;
-    /* border: 1px solid #ced4da; */
+   
     border-radius: .25rem;
-    /* -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
-    /* transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
+   
 }
 
 .container--login {
     text-align: center;
-    
-
     background-image: url("../Img/The Tavern.jpg");
     background-size: contain;
-    
     background-repeat: no-repeat;
-    /* height:100vh; */
     margin: 0 auto;
     padding: 0;
     height: 800px;
@@ -64,25 +57,20 @@ fieldset {
 .theTavern {
     color: silver;
     text-decoration: none;
-    /* font-style: italic; */
-    font-family: Bradley Hand, cursive;
+    font-family:  "Medievalsharp";
     font-size: 100px;
     font-weight: 300;
     margin-left: -35vw;
-   
-   
     
 }
 
 .form--login {
     background-position-x: right;
-    /* background-image:  */
     z-index: 1;
     min-height: 25rem;
-    min-width: 45rem;
-    /* background-color: hsla(0,0%,100%,0.40); */
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    margin-left: -35vw;
 }
 
 .emailAddress{
@@ -92,6 +80,11 @@ fieldset {
     color: white;
 }
 .sign__in{
-    color: red;
-
+    color:black;
+}
+.notA--member{
+    color: gold;
+}
+.link--register{
+    margin-top: -100px;
 }

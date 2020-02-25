@@ -45,16 +45,13 @@ export default (props) => {
 
       </select>
       <form onSubmit={handleSubmit}>
-        <input name="searchText"
+        <input className="search--field" name="searchText"
           defaultValue={searchText}
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <button type="submit">Search</button>
-        {/* button to take to rule list */}
-        {/* <Button className="button__armor btn btn-light btn-sm" onClick={() => props.history.push("/library/ancient")}>
-          Ancient Texts
-          </Button> */}
+        <button className="search--button" type="submit">Search</button>
+        
       </form>
     </div>
 

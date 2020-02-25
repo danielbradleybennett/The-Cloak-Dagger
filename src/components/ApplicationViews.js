@@ -70,16 +70,16 @@ export default (props) => {
 
 
                                                     <section className="note_world">
-                                                        <Route path="/vyasa">
+                                                        <Route path="/lore">
                                                             <div>
-                                                                <Button className="button__notes btn btn-light btn-sm" onClick={() => props.history.push("/vyasa/notesList")}>
+                                                                <Button className="button__notes btn btn-light btn-sm" onClick={() => props.history.push("/lore/notesList")}>
                                                                     Notes
                                                             </Button>
                                                             </div>
                                                         </Route>
-                                                        <Route path="/vyasa">
+                                                        <Route path="/lore">
                                                             <div>
-                                                                <button className="button__world btn btn-light btn-sm" onClick={() => props.history.push("/vyasa/worldList")}>
+                                                                <button className="button__world btn btn-light btn-sm" onClick={() => props.history.push("/lore/worldList")}>
                                                                     The World
                                                         </button>
                                                             </div>
@@ -136,7 +136,7 @@ export default (props) => {
                                                         props => <BrewSpellsForm {...props} />
                                                     } />
 
-                                                    
+
                                                     <Route exact path="/brewery/spellList/edit/:brewSpellsId(\d+)" render={
                                                         props => <BrewSpellsForm {...props} />
                                                     } />
@@ -162,35 +162,35 @@ export default (props) => {
                                                         props => <BrewMonstersForm {...props} />
                                                     } />
                                                     {/* The Notes Routes */}
-                                                    <Route exact path="/vyasa/notesList/edit/:notesId(\d+)" render={
+                                                    <Route exact path="/lore/notesList/edit/:notesId(\d+)" render={
                                                         props => <NotesForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/create" render={
+                                                    <Route exact path="/lore/notesList/create" render={
                                                         props => <NotesForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/" render={
+                                                    <Route exact path="/lore/notesList/" render={
                                                         props => <NotesList {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/:notesId(\d+)" render={
+                                                    <Route exact path="/lore/notesList/:notesId(\d+)" render={
                                                         props => <NotesDetails {...props} />
                                                     } />
                                                     {/* The World Routes */}
-                                                    <Route exact path="/vyasa/worldList/edit/:theWorldId(\d+)" render={
+                                                    <Route exact path="/lore/worldList/edit/:theWorldId(\d+)" render={
                                                         props => <TheWorldForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/create" render={
+                                                    <Route exact path="/lore/worldList/create" render={
                                                         props => <TheWorldForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/" render={
+                                                    <Route exact path="/lore/worldList/" render={
                                                         props => <TheWorldList {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/:theWorldId(\d+)" render={
+                                                    <Route exact path="/lore/worldList/:theWorldId(\d+)" render={
                                                         props => <TheWorldDetails {...props} />
                                                     } />
                                                     {/* Weapons Routes */}
@@ -263,18 +263,18 @@ export default (props) => {
                                                         props => <OpenConditionsDetails {...props} />
                                                     } />
 
-                                                     {/* Open5e Weapons */}
-                                                     <Route exact path="/library/weapons/:weaponSlug" render={
+                                                    {/* Open5e Weapons */}
+                                                    <Route exact path="/library/weapons/:weaponSlug" render={
                                                         props => <OpenWeaponsDetails {...props} />
                                                     } />
 
-                                                     {/* Open5e MagicItems */}
-                                                     <Route exact path="/library/magicitems/:magicItemSlug" render={
+                                                    {/* Open5e MagicItems */}
+                                                    <Route exact path="/library/magicitems/:magicItemSlug" render={
                                                         props => <OpenMagicItemsDetails {...props} />
                                                     } />
 
-                                                     {/* Open5e Races */}
-                                                     <Route exact path="/library/races/:raceSlug" render={
+                                                    {/* Open5e Races */}
+                                                    <Route exact path="/library/races/:raceSlug" render={
                                                         props => <OpenRacesDetails {...props} />
                                                     } />
 
@@ -285,7 +285,7 @@ export default (props) => {
 
 
 
-                                                    
+
 
 
 

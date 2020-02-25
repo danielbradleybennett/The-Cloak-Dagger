@@ -8,7 +8,7 @@
     padding: 0;  
     max-height: 400px;
     overflow-y: scroll;
-    justify-content: space-between;
+    justify-content: space-evenly;
 } 
 .world__form {
   display: inline-block;
@@ -41,7 +41,7 @@ body {
    color: gold; 
    text-decoration: none;
    font-family: Bradley Hand, cursive;
-   font-size: 28px;
+   font-size: 32px;
    font-weight: 300;
 
 }
@@ -70,5 +70,9 @@ body {
   min-height: 200px;
   overflow-y: scroll;
   min-width: 500px;
+}
+.world--button{
+  margin-top: 5px;
+  margin-left: 5px;
 }
 

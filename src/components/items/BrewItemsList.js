@@ -17,7 +17,7 @@ export default (props) => {
     return (
 
       <>
-        <Button className="button__item btn btn-light btn-sm" onClick={
+        <Button className="newItem__button btn btn-light btn-sm" onClick={
         () => props.history.push("/brewery/itemList/create")}>
         New Item
         </Button>

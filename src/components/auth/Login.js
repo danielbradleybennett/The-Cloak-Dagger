@@ -83,7 +83,7 @@ const Login = props => {
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link className="notA--member" to="/register">Not a member yet?</Link>
             </section>
         </main>
     )

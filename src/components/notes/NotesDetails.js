@@ -14,10 +14,11 @@ export default (props) => {
   return (
     <section className="notes__detail">
       <h3 className="notes__name">{note.name}</h3>
+      <div className="notes__date">{note.date}</div>
       <div className="notes__description">{note.desc}</div>
-      
+      <br></br>
       <button onClick={() => {
-        props.history.push(`/vyasa/notesList/edit/${note.id}`)
+        props.history.push(`/lore/notesList/edit/${note.id}`)
       }
       
       }>Edit</button>
@@ -27,7 +28,7 @@ export default (props) => {
           
           deleteNotes(note)
             .then(() => {
-              props.history.push("/vyasa/notesList")
+              props.history.push("/lore/notesList")
             })
         }
       }>Delete</button>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export default ({ world }) => (
     <section className="brewWorld">
         <h3 className="brewWorld__name">
-            <Link className="theWorld__link"to={`/vyasa/worldList/${world.id}`}>
+            <Link className="theWorld__link"to={`/lore/worldList/${world.id}`}>
                 { world.title }
             </Link>
            

@@ -16,8 +16,9 @@ export default (props) => {
       <h3 className="world__name">{world.title}</h3>
       <div className="world__description">{world.desc}</div>
       
+      <br></br>
       <button onClick={() => {
-        props.history.push(`/vyasa/worldList/edit/${world.id}`)
+        props.history.push(`/lore/worldList/edit/${world.id}`)
       }
       
       }>Edit</button>
@@ -27,7 +28,7 @@ export default (props) => {
           
           deleteTheWorld(world)
             .then(() => {
-              props.history.push("/vyasa/worldList")
+              props.history.push("/lore/worldList")
             })
         }
       }>Delete</button>

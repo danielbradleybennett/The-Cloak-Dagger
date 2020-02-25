@@ -56,7 +56,7 @@
   color: gold;
   text-decoration: none;
   font-family: Bradley Hand, cursive;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 300;
 }
 .brewSpells__link:hover{
@@ -65,15 +65,11 @@
 }
 
 .brewSpells__details{
-  color: gold;
-  font-size: 1em;
-  margin: 0 auto;
-  text-align: left;
   margin-left: 40px;
   margin-top: 40px;
-  margin-right: 40px;
-  max-height: 400px;
   overflow-y: scroll;
+  max-height: 400px;
+  color: gold;
 }
 
 .checkedCaster{
@@ -93,4 +89,5 @@
 }
 .newSpell__button{
  margin-top: 5px;
+ margin-left: 5px;
 }
