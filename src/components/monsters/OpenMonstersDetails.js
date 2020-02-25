@@ -24,9 +24,9 @@ export default (props) => {
     if (monster.actions){
       return monster.actions.map(action => 
         <>
-          <div>{action.desc}</div>
-          <br></br>
-            <div>{action.name}:</div>
+          <div>{action.name}</div>
+          
+          <div>{action.desc}:</div>
         </>
       )
     }

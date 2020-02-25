@@ -13,8 +13,8 @@ console.log(notes)
     return (
 
       <>
-        <button onClick={
-        () => props.history.push("/vyasa/notesList/create")}>
+        <button className="note--button" onClick={
+        () => props.history.push("/lore/notesList/create")}>
         New Note
         </button>
 

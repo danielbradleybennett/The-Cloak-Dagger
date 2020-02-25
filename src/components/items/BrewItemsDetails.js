@@ -13,12 +13,10 @@ export default (props) => {
 
   return (
     <section className="brewItemsDetail">
-      <h3 className="brewItemsDetail__name">{item.name}</h3>
-      <div className="brewItemsDetail__description">{item.desc}</div>
-      <br></br>
-      <div className="brewItemsDetail__rarity">Rarity: {item.rarity}</div>
-      <div className="brewItemsDetail__value">Value: {item.value}</div>
-      
+      <h3 className="brewItem__name">{item.name}</h3>
+      <div className="brewItem__description">{item.desc}</div>
+      <div className="brewItem__rarity">Rarity: {item.rarity}</div>
+    <br></br>
       <button onClick={() => {
         props.history.push(`/brewery/itemList/edit/${item.id}`)
       }

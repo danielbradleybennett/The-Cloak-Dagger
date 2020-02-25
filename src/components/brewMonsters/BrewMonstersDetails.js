@@ -14,29 +14,30 @@ export default (props) => {
 
 
   return (
-    <section className="monster">
-      <h3 className="monster__name">{monster.name}</h3>
-      <div className="monster__size">Size: {monster.size}</div>
-      <div className="monster__type">Type: {monster.type}</div>
-      <div className="monster__alignment">Alignment: {monster.alignment}</div>
-      <div className="monster__armor_class">AC: {monster.armor_class}</div>
-      <div className="monster__hit_points">HP: {monster.hit_points}</div>
-      <div className="monster__speed">Speed: {monster.speed}</div>
-      <div className="monster__strength">Strength: {monster.strength}</div>
-      <div className="monster__dexterity">Dexterity: {monster.dexterity}</div>
-      <div className="monster__constitution">Constitution: {monster.constitution}</div>
-      <div className="monster__intelligence">Intelligence: {monster.intelligence}</div>
-      <div className="monster__wisdom">Wisdom: {monster.wisdom}</div>
-      <div className="monster__charisma">Charisma: {monster.charisma}</div>
-      <div className="monster__actions">Actions: {monster.actions}</div>
+    <section className="brewMonster">
+      <h3 className="brewMonster__name">{monster.name}</h3>
+      <div className="brewMonster__size">{monster.type}, {monster.size}</div>
+      <div className="brewMonster__alignment">{monster.alignment}</div>
+      <div className="brewMonster__armor_class">AC: {monster.armor_class}</div>
+      <div className="brewMonster__hit_points">HP: {monster.hit_points}</div>
+      <div className="brewMonster__speed">Speed: {monster.speed}</div>
+      <div className="brewMonster__strength">Strength: {monster.strength}</div>
+      <div className="brewMonster__dexterity">Dexterity: {monster.dexterity}</div>
+      <div className="brewMonster__constitution">Constitution: {monster.constitution}</div>
+      <div className="brewMonster__intelligence">Intelligence: {monster.intelligence}</div>
+      <div className="brewMonster__wisdom">Wisdom: {monster.wisdom}</div>
+      <div className="brewMonster__charisma">Charisma: {monster.charisma}</div>
+      <br></br>
+      <div className="brewMonster__abilities">Abilities: {monster.abilities}</div>
+      <div className="brewMonster__actions">Actions: {monster.actions}</div>
       
 
-      
+      <br></br>
       <button onClick={() => {
         props.history.push(`/brewery/monsterList/edit/${monster.id}`)
       }
       }>Edit</button>
-
+      
       <button onClick={
         () => {
 

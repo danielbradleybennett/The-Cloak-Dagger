@@ -58,7 +58,7 @@ export default props => {
         intelligence: brewMonster.intelligence,
         wisdom: brewMonster.wisdom,
         charisma: brewMonster.charisma,
-        desc: brewMonster.desc,
+        desc: brewMonster.abilities,
         actions: brewMonster.actions,
         // abilities: brewMonster.abilities,
         userId: parseInt(localStorage.getItem("currentUserId")),
@@ -80,7 +80,7 @@ export default props => {
         intelligence: brewMonster.intelligence,
         wisdom: brewMonster.wisdom,
         charisma: brewMonster.charisma,
-        desc: brewMonster.desc,
+        desc: brewMonster.abilities,
         actions: brewMonster.actions,
         // abilities: brewMonster.abilities,
 
@@ -96,7 +96,8 @@ export default props => {
 
     <div className="brewMonsters__container">
       <form className="brewMonsters__form">
-        <h2 className="BrewMonstersBrewMonsters__title">{editMode ? "Update Monster" : "Create Monster"}</h2>
+        <br></br>
+        <h2 className="BrewMonstersBrewMonsters__title">{editMode ? "Update Monster" : "Brew Monster"}</h2>
 
         <fieldset>
           <div className="form-group">
@@ -257,20 +258,20 @@ export default props => {
 
         <fieldset>
           <div className="form-group">
-            <label htmlFor="desc">Description </label>
-            <input type="text" name="desc" className="form-control"
+            <label htmlFor="abilities">Abilities</label>
+            <textarea type="text" name="abilities" className="form-control brewMonster--abilities"
               proptype="varchar"
-              placeholder="Description"
-              value={brewMonster.description}
+              placeholder="Abilities"
+              value={brewMonster.abilities}
               onChange={handleControlledInputChange}>
-            </input>
+            </textarea>
           </div>
         </fieldset>
 
         <fieldset lassName="actions ">
           <div className="form-group ">
             <label htmlFor="actions">Actions </label>
-            <textarea type="text" name="actions" className="form-control"
+            <textarea type="text" name="actions" className="form-control brewMonster--actions"
               proptype="varchar"
               placeholder="Actions"
               value={brewMonster.actions}
@@ -279,81 +280,7 @@ export default props => {
           </div>
         </fieldset>
 
-        {/* <fieldset onSubmit={handleSubmit}>
-          {inputFields.map((inputField, index) => (
-            <Fragment key={`${inputField}~${index}`}>
-              <div className="form-group">
-                <label htmlFor="abilities">Abilities </label>
-                <input type="text" name="abilities" className="form-control"
-                  proptype="varchar"
-                  placeholder="Abilities"
-                  value={brewMonster.abilities}
-                  onChange={event => handleInputChange(index, event)}>
-                </input>
-              </div>
-
-              <div className="form-group col-sm-2">
-                <button
-                  className="btn btn-link"
-                  type="button"
-                  onClick={() => handleRemoveFields(index)}
-                >
-                  -
-                </button>
-                <button
-                  className="btn btn-link"
-                  type="button"
-                  onClick={() => handleAddFields()}
-                >
-                  +
-                </button>
-              </div>
-            </Fragment>
-          ))}
-        </fieldset> */}
-
-        {/* fill out later */}
-        {/* <fieldset>
-        <div className="form-group">
-          <label htmlFor="MonsterCasterType">Monster Caster Type: </label>
-          <input type="text" name="MonsterCasterType" className="form-control"
-            proptype="varchar"
-            placeholder="MonsterCasterType"
-            value={brewMonster.MonsterCasterType}
-            onChange={handleControlledInputChange}>
-          </input>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="MonsterRange">Monster Range: </label>
-          <input type="text" name="MonsterRange" className="form-control"
-            proptype="varchar"
-            placeholder="MonsterRange"
-            value={brewMonster.MonsterRange}
-            onChange={handleControlledInputChange}>
-          </input>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label htmlFor="MonsterDuration">Monster Duration: </label>
-          <input type="text" name="MonsterDuration" className="form-control"
-            proptype="varchar"
-            placeholder="MonsterDuration"
-            value={brewMonster.MonsterDuration}
-            onChange={handleControlledInputChange}>
-          </input>
-        </div>
-      </fieldset> */}
-
-
-
-
-
-
+       
         <button type="submit"
           onClick={evt => {
             evt.preventDefault()

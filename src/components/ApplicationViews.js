@@ -1,5 +1,5 @@
 import React from "react"
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import "./ApplicationView.css"
 import { Route } from "react-router-dom"
 import { BrewSpellsProvider } from "./brewSpells/BrewSpellsDataProvider"
@@ -21,10 +21,10 @@ import TheWorldForm from "./world/TheWorldForm"
 import { SpellTypeProvider } from "./brewSpells/SpellTypeProvider"
 import { SpellSpellCasterProvider } from "./brewSpells/SpellSpellCasterProvider"
 import { SpellCasterProvider } from "./brewSpells/SpellCasterProvider"
-import { BrewWeaponsProvider } from "./weapons/BrewWeaponsDataProvider"
-import BrewWeaponsDetails from "./weapons/BrewWeaponsDetails"
-import BrewWeaponsList from "./weapons/BrewWeaponsList"
-import BrewWeaponsForm from "./weapons/BrewWeaponsForm"
+import { BrewWeaponsProvider } from "./BrewWeapons/BrewWeaponsDataProvider"
+import BrewWeaponsDetails from "./BrewWeapons/BrewWeaponsDetails"
+import BrewWeaponsList from "./BrewWeapons/BrewWeaponsList"
+import BrewWeaponsForm from "./BrewWeapons/BrewWeaponsForm"
 import BrewItemsDetails from "./items/BrewItemsDetails"
 import BrewItemsList from "./items/BrewItemsList"
 import BrewItemsForm from "./items/BrewItemsForm"
@@ -36,8 +36,13 @@ import { BrewArmorProvider } from "./armor/BrewArmorDataProvider"
 // import MonstersList from "./monsters/MonstersList"
 
 import Library from "./library/Library"
-import OpenSpellsDetails from "./library/OpenSpellsDetails"
+import OpenSpellsDetails from "./spells/OpenSpellsDetails"
 import OpenMonstersDetails from "./monsters/OpenMonstersDetails"
+import OpenConditionsDetails from "./conditions/OpenConditionsDetails"
+import OpenWeaponsDetails from "./weapons/OpenWeaponsDetails"
+import OpenMagicItemsDetails from "./magic-items/OpenMagicItemsDetails"
+import OpenRacesDetails from "./races/OpenRacesDetails"
+import OpenClassesDetails from "./classes/OpenClassesDetails"
 
 
 
@@ -57,65 +62,65 @@ export default (props) => {
                                         <BrewWeaponsProvider>
                                             <BrewItemsProvider>
                                                 <BrewArmorProvider>
-                                                 
 
 
 
 
 
 
-                                                  <section className="note_world">
-                                                    <Route path="/vyasa">
-                                                        <div>
-                                                            <button onClick={() => props.history.push("/vyasa/notesList")}>
-                                                                Notes
+
+                                                    <section className="note_world">
+                                                        <Route path="/lore">
+                                                            <div>
+                                                                <Button className="button__notes btn btn-light btn-sm" onClick={() => props.history.push("/lore/notesList")}>
+                                                                    Notes
+                                                            </Button>
+                                                            </div>
+                                                        </Route>
+                                                        <Route path="/lore">
+                                                            <div>
+                                                                <button className="button__world btn btn-light btn-sm" onClick={() => props.history.push("/lore/worldList")}>
+                                                                    The World
                                                         </button>
-                                                        </div>
-                                                    </Route>
-                                                    <Route path="/vyasa">
-                                                        <div>
-                                                            <button onClick={() => props.history.push("/vyasa/worldList")}>
-                                                                The World
-                                                        </button>
-                                                        </div>
-                                                    </Route>
-                                                    
-                                                  </section>
+                                                            </div>
+                                                        </Route>
+
+                                                    </section>
 
                                                     <section className="Button">
                                                         <Route path="/brewery">
                                                             <div>
                                                                 <Button className="button__spells btn btn-light btn-sm" onClick={() => props.history.push("/brewery/spellList")}>
                                                                     Spells
-                                                        </Button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__monsters" onClick={() => props.history.push("/brewery/monsterList")}>
+                                                                <Button className="button__monsters btn btn-light btn-sm" onClick={() => props.history.push("/brewery/monsterList")}>
                                                                     Monsters
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__weapons" onClick={() => props.history.push("/brewery/weaponList")}>
+                                                                <Button className="button__weapons btn btn-light btn-sm" onClick={() => props.history.push("/brewery/weaponList")}>
                                                                     Weapons
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__items" onClick={() => props.history.push("/brewery/itemList")}>
+                                                                <Button className="button__items btn btn-light btn-sm" onClick={() => props.history.push("/brewery/itemList")}>
                                                                     Items
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                         <Route path="/brewery">
                                                             <div>
-                                                                <button className="button__armor" onClick={() => props.history.push("/brewery/armorList")}>
+                                                                <Button className="button__armor btn btn-light btn-sm" onClick={() => props.history.push("/brewery/armorList")}>
                                                                     Armor
-                                                        </button>
+                                                                </Button>
                                                             </div>
                                                         </Route>
                                                     </section>
@@ -124,16 +129,13 @@ export default (props) => {
 
                                                     {/* The Spells Routes */}
                                                     <Route exact path="/brewery/spellList/:brewSpellsId(\d+)" render={
-                                                        props => <BrewSpellsDetails {...props}  />
+                                                        props => <BrewSpellsDetails {...props} />
                                                     } />
 
                                                     <Route exact path="/brewery/spellList/create" render={
                                                         props => <BrewSpellsForm {...props} />
                                                     } />
 
-                                                    {/* <Route exact path="/brewery/spellList/create" render={
-                                                        props => <BrewSpellsList {...props} />
-                                                    } /> */}
 
                                                     <Route exact path="/brewery/spellList/edit/:brewSpellsId(\d+)" render={
                                                         props => <BrewSpellsForm {...props} />
@@ -160,35 +162,35 @@ export default (props) => {
                                                         props => <BrewMonstersForm {...props} />
                                                     } />
                                                     {/* The Notes Routes */}
-                                                    <Route exact path="/vyasa/notesList/edit/:notesId(\d+)" render={
+                                                    <Route exact path="/lore/notesList/edit/:notesId(\d+)" render={
                                                         props => <NotesForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/create" render={
+                                                    <Route exact path="/lore/notesList/create" render={
                                                         props => <NotesForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/" render={
+                                                    <Route exact path="/lore/notesList/" render={
                                                         props => <NotesList {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/notesList/:notesId(\d+)" render={
+                                                    <Route exact path="/lore/notesList/:notesId(\d+)" render={
                                                         props => <NotesDetails {...props} />
                                                     } />
                                                     {/* The World Routes */}
-                                                    <Route exact path="/vyasa/worldList/edit/:theWorldId(\d+)" render={
+                                                    <Route exact path="/lore/worldList/edit/:theWorldId(\d+)" render={
                                                         props => <TheWorldForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/create" render={
+                                                    <Route exact path="/lore/worldList/create" render={
                                                         props => <TheWorldForm {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/" render={
+                                                    <Route exact path="/lore/worldList/" render={
                                                         props => <TheWorldList {...props} />
                                                     } />
 
-                                                    <Route exact path="/vyasa/worldList/:theWorldId(\d+)" render={
+                                                    <Route exact path="/lore/worldList/:theWorldId(\d+)" render={
                                                         props => <TheWorldDetails {...props} />
                                                     } />
                                                     {/* Weapons Routes */}
@@ -256,8 +258,37 @@ export default (props) => {
                                                         props => <OpenMonstersDetails {...props} />
                                                     } />
 
+                                                    {/* Open5e Conditions */}
+                                                    <Route exact path="/library/conditions/:conditionSlug" render={
+                                                        props => <OpenConditionsDetails {...props} />
+                                                    } />
 
-                                                 
+                                                    {/* Open5e Weapons */}
+                                                    <Route exact path="/library/weapons/:weaponSlug" render={
+                                                        props => <OpenWeaponsDetails {...props} />
+                                                    } />
+
+                                                    {/* Open5e MagicItems */}
+                                                    <Route exact path="/library/magicitems/:magicItemSlug" render={
+                                                        props => <OpenMagicItemsDetails {...props} />
+                                                    } />
+
+                                                    {/* Open5e Races */}
+                                                    <Route exact path="/library/races/:raceSlug" render={
+                                                        props => <OpenRacesDetails {...props} />
+                                                    } />
+
+                                                    {/* Open5e Races */}
+                                                    <Route exact path="/library/classes/:classSlug" render={
+                                                        props => <OpenClassesDetails {...props} />
+                                                    } />
+
+
+
+
+
+
+
                                                 </BrewArmorProvider>
                                             </BrewItemsProvider>
                                         </BrewWeaponsProvider>

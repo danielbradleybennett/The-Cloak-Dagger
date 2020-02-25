@@ -144,7 +144,8 @@ export default props => {
 
     <div className="brewSpells__container">
       <form className="brewSpells__form">
-        <h2 className="brewSpells__title">{editMode ? "Update Spell" : "Add Spell"}</h2>
+        <br></br>
+        <h2 className="brewSpells__title">{editMode ? "Update Spell" : "Brew Spell"}</h2>
 
         <div className="spellForm__container">
 
@@ -250,15 +251,6 @@ export default props => {
             onChange={handleControlledInputChange}
           />
         </div>
-
-
-
-
-
-
-
-
-
 
         <button type="submit"
           onClick={evt => {

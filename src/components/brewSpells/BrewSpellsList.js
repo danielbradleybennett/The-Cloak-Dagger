@@ -4,6 +4,7 @@ import BrewSpells from "./BrewSpells"
 import "./BrewSpells.css"
 
 
+
 export default (props) => {
   
   
@@ -16,7 +17,7 @@ export default (props) => {
     return (
 
       <>
-        <button onClick={
+        <button className="newSpell__button btn btn-light btn-sm" onClick={
         () => props.history.push("/brewery/spellList/create")}>
         New Spell
         </button>

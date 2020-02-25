@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { BrewItemsContext } from "./BrewItemsDataProvider"
 import BrewItems from "./BrewItems"
 import "./BrewItems.css"
+import {Button} from "react-bootstrap"
 
 
 export default (props) => {
@@ -16,10 +17,10 @@ export default (props) => {
     return (
 
       <>
-        <button onClick={
+        <Button className="newItem__button btn btn-light btn-sm" onClick={
         () => props.history.push("/brewery/itemList/create")}>
         New Item
-        </button>
+        </Button>
 
         <div className="brewItems__container">
           {

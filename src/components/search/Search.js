@@ -1,4 +1,5 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
+import {Button} from "react-bootstrap"
 
 
 
@@ -21,7 +22,7 @@ export default (props) => {
     setSearchText(e.target.value);
   }
 
-  
+
   const handleSubmit = (event) => {
     event.preventDefault()
     props.handleSubmit(searchText, searchType)
@@ -36,15 +37,21 @@ export default (props) => {
       <select onChange={handleSearchTypeChange} value={searchType}>
         <option value="monsters">Monsters</option>
         <option value="spells">Spells</option>
+        <option value="weapons">Weapons</option>
+        <option value="magicItems">Magic Items</option>
+        <option value="races">Races</option>
+        <option value="classes">Classes</option>
+        <option value="conditions">Conditions</option>
 
       </select>
       <form onSubmit={handleSubmit}>
-        <input name="searchText"
+        <input className="search--field" name="searchText"
           defaultValue={searchText}
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <button type="submit">Search</button>
+        <button className="search--button" type="submit">Search</button>
+        
       </form>
     </div>
 

@@ -41,20 +41,22 @@ export default props => {
       editNotes({
         id: note.id,
         name: note.name,
+        date: note.date,
         desc: note.desc,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
-        .then(() => props.history.push("/vyasa/notesList"))
+        .then(() => props.history.push("/lore/notesList"))
     } else {
       addNotes({
         id: note.id,
         name: note.name,
+        date: note.date,
         desc: note.desc,
         
         userId: parseInt(localStorage.getItem("currentUserId")),
       })
-        .then(() => props.history.push("/vyasa/notesList"))
+        .then(() => props.history.push("/lore/notesList"))
     }
 
   }
@@ -77,10 +79,19 @@ export default props => {
         </div>
       </fieldset>
 
+      <div className="form-group">
+          <label htmlFor="date">Date: </label>
+          <input type="date" name="date" className="form-control"
+            proptype="varchar"
+            value={note.date}
+            onChange={handleControlledInputChange}
+          ></input>
+        </div>
+
       <fieldset>
         <div className="form-group">
           <label htmlFor="noteDesc">Description: </label>
-          <textarea type="text" name="desc" required className="form-control"
+          <textarea type="text" name="desc" required className="form-control notes--description"
             proptype="varchar"
             placeholder="Note Description"
             defaultValue={note.desc}

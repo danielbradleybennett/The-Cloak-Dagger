@@ -1,0 +1,60 @@
+/* 1-14 centers form */
+.brewWeapons__container {
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  flex-wrap: wrap; 
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 0;  
+  max-height: 400px;
+  overflow-y: scroll;
+  justify-content: space-evenly;
+}
+.brewWeapons__form{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  color: gold;
+}
+.brewWeapons {
+    flex-basis: 30%; 
+    padding: 1em;   
+}
+.brewWeapons__link{
+  color: gold;  
+  text-decoration: none;
+  font-family: Bradley Hand, cursive;
+  font-size: 32px;
+  font-weight: 300;
+}
+.brewWeapons__link:hover{
+  text-decoration:none !important;
+  color: green;
+
+}
+
+.brewWeapons__detail{
+  color: gold;
+  font-size: 1em;
+  margin: 0 auto;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+.brewWeapons__description{
+  word-break: normal;
+  max-width: 1000px;
+  white-space: pre-wrap;
+}
+
+.weapon--description{
+  min-height: 200px;
+  overflow-y: scroll;
+  min-width: 500px;
+}
+.newWeapon__button{
+  margin-top: 5px;
+  margin-left: 5px;
+}

@@ -1,25 +1,28 @@
   .world__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* flex-direction: row; */
-  margin: 0 auto;
-  padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    flex-wrap: wrap; 
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0;  
+    max-height: 400px;
+    overflow-y: scroll;
+    justify-content: space-evenly;
 } 
 .world__form {
   display: inline-block;
   margin: 0 auto;
   text-align: left;
+  color: gold;
 
 } 
-
 html {
   background-color: rgb(24, 4, 4);
 }
-.worldList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.brewWorld {
+  flex-basis: 30%;
+  padding: 1em;
 }
 
 /* background pic */
@@ -32,42 +35,44 @@ body {
   min-height: 650px;
   background-position: center;
   background-repeat: no-repeat;
-  
-
-
-  
-   
-  /* min-height: 100%;
-  margin: 0 auto;
-  padding: 0;
-  height: 1000px; */
-  
  }
 
 .theWorld__link{
    color: gold; 
    text-decoration: none;
    font-family: Bradley Hand, cursive;
-   font-size: 2em;
+   font-size: 32px;
    font-weight: 300;
 
 }
-.world__title{
-  width: 10px;
-  display:inline-block;
+.theWorld__link:hover{
+  text-decoration:none !important;
+  color: green;
 
 }
 
-  .world__desc {
-   width: 1500px;
+  .world__description {
+    word-break: normal;
+    max-width: 1000px;
+    white-space: pre-wrap;
   
   }
 .theWorldDetail{
   color: gold;
-  text-decoration: none;
-  font-family: Bradley Hand, cursive;
-  font-size: x-large;
-  font-weight: 300;
-
+  font-size: 1em;
+  margin: 0 auto;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+.world--description{
+  min-height: 200px;
+  overflow-y: scroll;
+  min-width: 500px;
+}
+.world--button{
+  margin-top: 5px;
+  margin-left: 5px;
 }
 

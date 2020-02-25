@@ -1,24 +1,26 @@
 .brewSpells__container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   flex-direction: row;
-  margin: 0 auto;
-  padding: 0;
-  color: gold; 
+  background-repeat: no-repeat;
+  flex-wrap: wrap; 
+  margin-left: 10px;
+  margin-top: 10px; 
+  max-height: 400px;
+  overflow-y: scroll;
+  color: gold;
+  font-size: 1em;
+  max-height: 400px;
+  overflow-y: scroll;
+  justify-content: space-between;
+
 }
 
+
+
 .brewSpells{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: scroll;
-  flex-basis: 25%;
-  width: 300px;
+  flex-basis: 30%;
   padding: 1em;
-  color: gold;
-
-
+  
 }
 
 .spellForm__container{
@@ -54,18 +56,20 @@
   color: gold;
   text-decoration: none;
   font-family: Bradley Hand, cursive;
-  font-size: 50px;
+  font-size: 32px;
   font-weight: 300;
+}
+.brewSpells__link:hover{
+  text-decoration:none !important;
+  color: green;
 }
 
 .brewSpells__details{
+  margin-left: 40px;
+  margin-top: 40px;
+  overflow-y: scroll;
+  max-height: 400px;
   color: gold;
-  text-decoration: none;
-  font-size: 10px;
-  max-width: 1000px;
-  display: inline-block;
-  margin: 0 auto;
-  text-align: left;
 }
 
 .checkedCaster{
@@ -75,13 +79,15 @@
 }
 .brewSpells__description{
   word-break: normal;
-  max-width: 300px;
+  max-width: 1000px;
   white-space: pre-wrap;
 }
 
 .spell--description{
   min-height: 200px;
   overflow-y: scroll;
-
-
+}
+.newSpell__button{
+ margin-top: 5px;
+ margin-left: 5px;
 }
